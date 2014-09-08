@@ -10,8 +10,13 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
 Route::get('/', function()
 {
-	return View::make('hello');
+	$jalal=DB::table('user')->get();
+	// return View::make('hello')->with('name',$jalal);
+	return $jalal;
 });
+// Route::get('foo', array('https', function()
+// {
+//     return 'Must be over HTTPS';
+// }));
