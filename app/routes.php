@@ -10,9 +10,10 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+
 Route::get('/', function()
 {
-	$jalal=DB::table('user')->get();
+	$jalal =DB::table('user')->get();
 	// return View::make('hello')->with('name',$jalal);
 	return $jalal;
 });
