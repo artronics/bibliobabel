@@ -11,11 +11,12 @@
 |
 */
 
-Route::get('/', function()
-{
-	$jalal =DB::table('user')->get();
-	// return View::make('hello')->with('name',$jalal);
-	return $jalal;
+Route::get('/', function () {
+    $jalal =DB::table('users')->get();
+    // return View::make('hello')->with('name',$jalal);
+    return $jalal;
+    efrefrj;
+
 });
 // Route::get('foo', array('https', function()
 // {

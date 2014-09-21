@@ -54,7 +54,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'bibliobabel.local',
+			'host'      => 'localhost',
 			'database'  => 'bibliobabel',
 			'username'  => 'jalal',
 			'password'  => '6220617',
