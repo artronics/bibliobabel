@@ -16,5 +16,6 @@ Route::get('/', function () {
     // // return View::make('hello')->with('name',$jalal);
     // return $jalal;
     // efrefrj;
-    return View::make('test');
+    // return View::make('test');
+    new Acme\User\User();
 });
