@@ -12,13 +12,9 @@
 */
 
 Route::get('/', function () {
-    $jalal =DB::table('users')->get();
-    // return View::make('hello')->with('name',$jalal);
-    return $jalal;
-    efrefrj;
-
+    // $jalal =DB::table('users')->get();
+    // // return View::make('hello')->with('name',$jalal);
+    // return $jalal;
+    // efrefrj;
+    return View::make('test');
 });
-// Route::get('foo', array('https', function()
-// {
-//     return 'Must be over HTTPS';
-// }));
