@@ -1,17 +1,20 @@
 <?php
+use Acme\User\User;
 
-class DatabaseSeeder extends Seeder {
-
-	/**
+class DatabaseSeeder extends Seeder
+{
+    /**
 	 * Run the database seeds.
 	 *
 	 * @return void
 	 */
-	public function run()
-	{
-		Eloquent::unguard();
+    public function run()
+    {
+        User::truncate();
 
-		// $this->call('UserTableSeeder');
-	}
+        Eloquent::unguard();
+
+        $this->call('UsersTableSeeder');
+    }
 
 }

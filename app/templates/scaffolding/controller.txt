@@ -1,4 +1,5 @@
 <?php
+use Acme\;//path to model
 
 class $NAME$ extends \BaseController {
 
