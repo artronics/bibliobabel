@@ -13,6 +13,7 @@ use Acme\User\User;
 */
 
 Route::resource('users', 'UsersController');
+Route::resource('profiles', 'ProfilesController');
 
 Route::get('/', function () {
 
