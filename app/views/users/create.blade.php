@@ -7,11 +7,11 @@
 
 
 @section('test-content')
-    {{Form::open(array('role' => 'form',
-    ))}}
-        {{Form::label('First Name')}}
-        {{FORM::input('firstname','hh')}}
-    {{Form::close()}}
+    {{BootstrapForm::openInline()}}
+
+    {{BootstrapForm::text('username')}}
+    {{BootstrapForm::text('password')}}
+
 
 
 @stop
