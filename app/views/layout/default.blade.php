@@ -15,7 +15,7 @@
     <title></title>
 
     <!-- Bootstrap -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- You need extra stylesheets? fill section to this yield! -->
     @yield('stylesheets')
 </head>
@@ -24,14 +24,19 @@
         @yield('container-fluid')
 
         <!-- This yield is for test purpose. extend it to whatever file you want -->
-        @yield('testContent')
+        <div class="row test">
+            <div class="col-md-6 col-md-offset-3">
+                @yield('test-content')
+            </div>
+        </div>
+
     </div>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
     <!-- You need extra scripts? fill section to this yield! -->
     @yield('scripts')
 </body>
