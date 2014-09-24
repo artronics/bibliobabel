@@ -106,7 +106,19 @@ return array(
         'Illuminate\Encryption\EncryptionServiceProvider',
         'Illuminate\Filesystem\FilesystemServiceProvider',
         'Illuminate\Hashing\HashServiceProvider',
+        /*
+            'Illuminate\Html\HtmlServiceProvider', changed to
+            Acme\Providers\HtmlServiceProvider,
+
+            Now we can use FormGroup method to build bootstarp
+            layout without sending class="form-group" every time
+
+            Source:http://blog.stidges.com/post/easy-bootstrap-forms-in-laravel
+         */
         'Illuminate\Html\HtmlServiceProvider',
+        'Watson\BootstrapForm\BootstrapFormServiceProvider',
+        // 'Acme\Providers\HtmlServiceProvider',
+
         'Illuminate\Log\LogServiceProvider',
         'Illuminate\Mail\MailServiceProvider',
         'Illuminate\Database\MigrationServiceProvider',
@@ -189,6 +201,7 @@ return array(
         'URL'               => 'Illuminate\Support\Facades\URL',
         'Validator'         => 'Illuminate\Support\Facades\Validator',
         'View'              => 'Illuminate\Support\Facades\View',
+        'BootstrapForm' => 'Watson\BootstrapForm\Facades\BootstrapForm',
 
     ),
 

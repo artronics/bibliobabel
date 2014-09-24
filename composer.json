@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+		"watson/bootstrap-form": "0.8.*"
 	},
 	"require-dev": {
         "phpspec/phpspec": "~2.0",
