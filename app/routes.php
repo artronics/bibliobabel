@@ -13,5 +13,6 @@
 Route::resource('users', 'UsersController');
 
 Route::get('/', function () {
+    return View::make('home.home');
 
 });
