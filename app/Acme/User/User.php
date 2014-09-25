@@ -17,7 +17,7 @@ class User extends \Eloquent implements UserInterface, RemindableInterface
     ];
 
     // Don't forget to fill this array
-    protected $fillable = ['email', 'password', 'firstname','lastname'];
+    protected $fillable = ['email', 'password', 'name'];
 
     /**
      * The database table used by the model.

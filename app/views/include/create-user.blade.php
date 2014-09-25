@@ -1,15 +1,9 @@
 {{ Form::open(array('route' => 'users.store','role' => 'form','class' => 'form')) }}
     <div class="form-group">
-        {{ Form::label('firstname','First Name: ')}}
-        {{ Form::text('firstname',null, array('class'       => 'form-control',
-                                            'id'          => 'firstname',
-                                            'placeholder' => 'First Name'  ))}}
-    </div>
-    <div class="form-group">
-        {{ Form::label('lastname','Last Name: ')}}
-        {{ Form::text('lastname',null, array('class'       => 'form-control',
-                                            'id'          => 'lastname',
-                                            'placeholder' => 'Last Name'  ))}}
+        {{ Form::label('name','Your Name: ')}}
+        {{ Form::text('name',null, array('class'       => 'form-control',
+                                            'id'          => 'name',
+                                            'placeholder' => 'Your Name'  ))}}
     </div>
     <div class="form-group">
         {{ Form::label('email','Email: ')}}
