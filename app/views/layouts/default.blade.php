@@ -16,8 +16,11 @@
 
     <!-- Bootstrap -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- You need extra stylesheets? fill section to this yield! -->
-    @yield('stylesheets')
+    <!-- You need extra stylesheets? fill override this section
+    DO NOT FORGET to add @parent if you also need this stylesheet along side your own -->
+    @section('stylesheets')
+        <link href="/css/home.css" rel="stylesheet">
+    @show
 </head>
 <body>
     <div class="container-fluid costum-container">

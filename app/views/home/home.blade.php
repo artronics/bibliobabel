@@ -1,4 +1,4 @@
-@extends('layout.default')
+@extends('layouts.default')
 
 <!-- Specific stylesheets for this layout -->
 @section('stylesheets')
@@ -35,11 +35,8 @@
             posting comments. But so what, it was still</p>
         </div>
         <div class="col-md-6 slideshow">
-            <p>Having read this I believed it was rather informative. I appreciate you taking
-            the time and effort to put this information together. I once again find myself
-            personally spending a significant amount of time both reading and
-            posting comments. But so what, it was still</p>
 
+            @include('include.create-user')
         </div>
     </div>
 
