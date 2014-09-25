@@ -18,6 +18,12 @@
                                              ))}}
     </div>
     <div class="form-group">
+        {{ Form::label('password_confirmation','Confirm Password: ')}}
+        {{ Form::password('password_confirmation', array('class'       => 'form-control',
+                                            'id'          => 'password-confirmation',
+                                             ))}}
+    </div>
+    <div class="form-group">
         {{ Form::submit('Signup', array('class'       => 'btn btn-primary btn-lg btn-block',
                                         'id'          => 'btn-signup'  ))}}
     </div>

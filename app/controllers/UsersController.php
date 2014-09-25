@@ -35,7 +35,9 @@ class UsersController extends \BaseController
         $validator = Validator::make($data = Input::all(), User::$rules);
 
         if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator)->withInput();
+            // return Redirect::back()->withErrors($validator)->withInput();
+            return $validator->messages();
+
         }
 
         User::create($data);

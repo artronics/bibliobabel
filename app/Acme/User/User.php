@@ -13,6 +13,9 @@ class User extends \Eloquent implements UserInterface, RemindableInterface
 
     // Add your validation rules here
     public static $rules = [
+        'email' => 'required|email',
+        'password' => 'required|confirmed',
+        'name' => 'required',
         // 'title' => 'required'
     ];
 
