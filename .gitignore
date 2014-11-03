@@ -1,6 +1,9 @@
 /bootstrap/compiled.php
 /vendor
 /.idea
+/public/img
+/public/bootstrap
+compass/.sass-cache
 composer.phar
 composer.lock
 .env.*.php
