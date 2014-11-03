@@ -4,22 +4,27 @@
 
     <div class="container">
 
-        <header class="header" id="header">
-            <div class="logo">
+        <header id="home-header">
+            <div class="logo" id="header-logo">
                 <h2>LOGO</h2>
             </div>
-            <nav class="main-nav" id="main-nav">
-                <ul id="icons">
-                    <li><a href="#"><img src="/img/icons/home.svg"></a></li>
+            <nav id="main-nav">
+                <ul class="header-icons" id="link-icons">
+                    <li class="header-icon-list"><a href="#"><img class="img-icons" src="/img/icons/home.svg"></a></li>
+                    <li class="header-icon-list"><a href="#"><img class="img-icons" src="/img/icons/library.svg"></a></li>
+                </ul>
+                <ul class="header-icons" id="popup-icons">
+                    <li class="header-icon-list"><a href="#"><img class="img-icons" src="/img/icons/message.svg"></a></li>
+                    <li class="header-icon-list"><a href="#"><img class="img-icons" src="/img/icons/notification.svg"></a></li>
                 </ul>
             </nav>
-            <div class="user" id="user">
+            <div  id="user">
                 <h2>USER</h2>
             </div>
         </header>
 
         <section id="main-section">
-            <aside class="aside-links" id="links-section">
+            <aside class="links-aside" id="links-section">
                 <h2>LINKS</h2>
                 <div class="links">
                     <h2>LINKS2</h2>
@@ -29,7 +34,7 @@
                 </div>
             </aside>
 
-            <section class="posts-section" id="posts-section">
+            <section id="posts-section">
                 <h2>POSTS</h2>
                 <article class="posts">
                     <h2>POST-1</h2>
@@ -48,17 +53,18 @@
                 </article>
                 <article class="posts">
                     <h2>POST-3</h2>
+                </article>
             </section>
 
-            <div class="subnav-section">
+            <aside class="links-aside" id="subnav-section">
                     <h2>SUB NAV</h2>
-                    <div class="subnav">
+                    <nav class="subnav">
                         <h2>SUB NAV1</h2>
-                    </div>
-                    <div class="subnav">
+                    </nav>
+                    <nav class="subnav">
                         <h2>SUB NAV1</h2>
-                    </div>
-            </div>
+                    </nav>
+            </aside>
         </section>
     </div>
 

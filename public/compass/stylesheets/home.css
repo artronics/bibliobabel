@@ -281,7 +281,7 @@ h2 {
 }
 
 /* line 24, ../sass/layouts/home.scss */
-div, header, nav, article, aside, section {
+div, header, nav, article, aside, section, ul {
   border: 2px solid orange;
   border-radius: 5px;
   margin-top: 2px;
@@ -345,30 +345,30 @@ div, header, nav, article, aside, section {
 }
 
 /* line 42, ../sass/layouts/home.scss */
-#header {
+#home-header {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
   overflow: hidden;
   *zoom: 1;
-  height: 50px;
+  height: 150px;
   position: fixed;
 }
 /* line 47, ../sass/layouts/home.scss */
-#header .logo {
+#home-header #header-logo {
   width: 18.36735%;
   float: left;
   margin-right: 2.04082%;
 }
 /* line 50, ../sass/layouts/home.scss */
-#header #main-nav {
+#home-header #main-nav {
   width: 59.18367%;
   float: left;
   margin-right: 2.04082%;
 }
 /* line 53, ../sass/layouts/home.scss */
-#header #user {
+#home-header #user {
   width: 18.36735%;
   float: right;
   margin-right: 0;
@@ -382,7 +382,7 @@ div, header, nav, article, aside, section {
   margin-right: 0;
   overflow: hidden;
   *zoom: 1;
-  margin-top: 50px;
+  margin-top: 150px;
 }
 
 /* line 64, ../sass/layouts/home.scss */
@@ -418,7 +418,7 @@ div, header, nav, article, aside, section {
 }
 
 /* line 79, ../sass/layouts/home.scss */
-.subnav-section {
+#subnav-section {
   width: 18.36735%;
   float: right;
   margin-right: 0;
@@ -426,9 +426,31 @@ div, header, nav, article, aside, section {
   *zoom: 1;
 }
 /* line 82, ../sass/layouts/home.scss */
-.subnav-section .subnav {
+#subnav-section .subnav {
   width: 100%;
   float: left;
   margin-left: 0;
   margin-right: 0;
+}
+
+/* line 5, ../sass/home.scss */
+nav#main-nav {
+  text-align: center;
+}
+/* line 7, ../sass/home.scss */
+nav#main-nav ul.header-icons {
+  text-align: center;
+  list-style: none;
+  display: inline;
+}
+/* line 11, ../sass/home.scss */
+nav#main-nav ul.header-icons li.header-icon-list {
+  display: inline;
+  text-align: center;
+  list-style: none;
+}
+/* line 15, ../sass/home.scss */
+nav#main-nav ul.header-icons li.header-icon-list .img-icons {
+  width: 30px;
+  height: 30px;
 }

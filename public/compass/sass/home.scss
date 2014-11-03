@@ -2,4 +2,22 @@
 @import "layouts/home";
 
 
+nav#main-nav{
+  text-align: center;
+  ul.header-icons{
+    text-align: center;
+    list-style: none;
+    display: inline;
+    li.header-icon-list{
+      display: inline;
+      text-align: center;
+      list-style: none;
+      .img-icons {
+        width: $header-icon-width;
+        height: $header-icon-height;
+      }
+    }
+  }
+}
+
 

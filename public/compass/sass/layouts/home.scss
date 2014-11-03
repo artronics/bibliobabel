@@ -2,7 +2,7 @@
 
 $container-breakpoint:2000px;
 $container-max-width:1140px;
-$header-width:50px;//gutter(10)*3;
+$header-width:150px;//gutter(10)*3;
 $header-max-width:$header-width;
 
 $header-icon-width:30px;
@@ -21,7 +21,7 @@ h2 {
 //  padding-top: 1.8rem;
 //  padding-bottom: 1.8rem;
 }
-div,header,nav,article,aside,section{
+div,header,nav,article,aside,section,ul{
   border: 2px solid orange;
   border-radius: 5px;
   margin: {
@@ -39,12 +39,12 @@ div,header,nav,article,aside,section{
   }
   @include clearfix;
 }
-#header{
+#home-header{
   @include span(full);
   @include clearfix;
   height: $header-width;
   position: fixed;
-  .logo{
+  #header-logo{
     @include span(2 of 10);
   }
   #main-nav{
@@ -76,7 +76,7 @@ div,header,nav,article,aside,section{
   }
 }
 
-.subnav-section{
+#subnav-section{
   @include span(2 of 10 last);
   @include clearfix;
   .subnav{
