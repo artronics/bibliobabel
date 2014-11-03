@@ -1,0 +1,85 @@
+@import "../partials/base";
+
+$container-breakpoint:2000px;
+$container-max-width:1140px;
+$header-width:50px;//gutter(10)*3;
+$header-max-width:$header-width;
+
+$header-icon-width:30px;
+$header-icon-height:$header-icon-width;
+$susy: (
+        global-box-sizing: border-box,
+        use-custom: (rem: true
+        ),
+        debug:(image:show),
+        columns:10
+);
+h2 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: normal;
+//  padding-top: 1.8rem;
+//  padding-bottom: 1.8rem;
+}
+div,header,nav,article,aside,section{
+  border: 2px solid orange;
+  border-radius: 5px;
+  margin: {
+    top:2px;
+    bottom: 2px;
+  }
+}
+
+@include border-box-sizing;
+
+.container{
+  @include container;
+  @include breakpoint($container-breakpoint){
+    @include container($container-max-width);
+  }
+  @include clearfix;
+}
+#header{
+  @include span(full);
+  @include clearfix;
+  height: $header-width;
+  position: fixed;
+  .logo{
+    @include span(2 of 10);
+  }
+  #main-nav{
+    @include span(6 of 10);
+  }
+  #user{
+    @include span(2 of 10 last);
+  }
+}
+#main-section{
+  @include span(full);
+  @include clearfix;
+  margin-top: $header-width;
+
+}
+
+#links-section{
+  @include span(2 of 10);
+  @include clearfix;
+  .links{
+    @include span(full);
+  }
+}
+#posts-section{
+  @include span(6 of 10);
+  @include clearfix;
+  .posts{
+    @include span(full);
+  }
+}
+
+.subnav-section{
+  @include span(2 of 10 last);
+  @include clearfix;
+  .subnav{
+    @include span(full);
+  }
+}

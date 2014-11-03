@@ -11,8 +11,19 @@
 */
 
 Route::resource('users', 'UsersController');
+Route::resource('sessions', 'SessionsController',['only'=>['create','store', 'destroy']]);
 
-Route::get('/', function () {
-    return View::make('home.home');
+Route::get('login', 'SessionsController@create');
+Route::get('logout', 'SessionsController@destroy');
 
-});
+Route::get('profile', function () {
+    return 'y;our rmail address is ' . Auth::user()->email;
+})->before('auth');
+
+Route::get('/',['as' => 'home', function () {
+
+    if(Auth::check()) return View::make('home.home');
+
+    return View::make('home.homepage');
+
+}]);

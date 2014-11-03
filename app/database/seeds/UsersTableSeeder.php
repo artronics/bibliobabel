@@ -13,10 +13,20 @@ class UsersTableSeeder extends Seeder
             User::create([
                 'email'     => $faker->unique()->email(),
                 'password'  => $faker->sentence(2),
-                'firstname' => $faker->firstname() ,
-                'lastname'  => $faker->lastname(),
+                'name' => $faker->firstname() ,
             ]);
         }
+        DB::table('users')->delete();
+        User::create(array(
+            'name'     => 'Chris Sevilleja',
+            'email'    => 'chris@scotch.io',
+            'password' => Hash::make('awesome'),
+        ));
+        User::create(array(
+            'name'     => 'Jalal Hosseini',
+            'email'    => 'jh_topgraph@yahoo.com',
+            'password' => Hash::make('1234'),
+        ));
 
     }
 

@@ -40,6 +40,7 @@ class UsersController extends \BaseController
 
         }
 
+        $data['password'] = Hash::make($data['password']);
         User::create($data);
 
         return Redirect::route('users.index');
