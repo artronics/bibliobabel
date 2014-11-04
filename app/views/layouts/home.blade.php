@@ -6,21 +6,42 @@
 
         <header id="home-header">
             <div class="logo" id="header-logo">
-                <h2>LOGO</h2>
+                <span id="logo-img-span"></span>
+                <img id="main-logo-img" src="http://www.placehold.it/250x50 alt="Bibliobabel Logo"/>
             </div>
             <nav id="main-nav">
-                <ul class="header-icons" id="link-icons">
-                    <li class="header-icon-list"><a href="#"><img class="img-icons" src="/img/icons/home.svg"></a></li>
-                    <li class="header-icon-list"><a href="#"><img class="img-icons" src="/img/icons/library.svg"></a></li>
-                </ul>
-                <ul class="header-icons" id="popup-icons">
-                    <li class="header-icon-list"><a href="#"><img class="img-icons" src="/img/icons/message.svg"></a></li>
-                    <li class="header-icon-list"><a href="#"><img class="img-icons" src="/img/icons/notification.svg"></a></li>
-                </ul>
+                <div id="header-main-table">
+                    <div id="header-main-row">
+                        <div class="header-main" id="header-home">
+                            <a href="#"><img class="img-icons" src="/img/icons/home.svg"></a>
+                        </div>
+                        <div class="header-main" id="header-library">
+                            <a href="#"><img class="img-icons" src="/img/icons/library.svg"></a>
+                        </div>
+                        <div class="header-main" id="header-messages">
+                            <a href="#"><img class="img-icons" src="/img/icons/message.svg"></a>
+                        </div>
+                        <div class="header-main" id="header-notifications">
+                            <a href="#"><img class="img-icons" src="/img/icons/notification.svg"></a>
+                        </div>
+                    </div>
+                </div>
             </nav>
-            <div  id="user">
-                <h2>USER</h2>
-            </div>
+            <nav id="user">
+                <div id="user-table">
+                    <div id="user-row">
+                        <div class="user-header" id="user-name">
+                            <a href="#"><h2 id="header-user-heading">{{Auth::user()->name}}</h2></a>
+                        </div>
+                        <div class="user-header" id="user-caret">
+                            <a href="#"><img class="img-icons" src="/img/icons/caret.svg" alt=""/></a>
+                        </div>
+                        <div class="user-header" id="user-setting">
+                            <a href="#"><img class="img-icons"  src="/img/icons/setting.svg" alt=""/></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </header>
 
         <section id="main-section">

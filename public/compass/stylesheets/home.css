@@ -433,24 +433,120 @@ div, header, nav, article, aside, section, ul {
   margin-right: 0;
 }
 
-/* line 5, ../sass/home.scss */
-nav#main-nav {
-  text-align: center;
+/******************
+|Header style
+*******************
+*/
+/*
+| Logo (also read Note)
+*/
+/* line 21, ../sass/home.scss */
+div#header-logo {
+  height: 150px;
 }
-/* line 7, ../sass/home.scss */
-nav#main-nav ul.header-icons {
-  text-align: center;
-  list-style: none;
-  display: inline;
-}
-/* line 11, ../sass/home.scss */
-nav#main-nav ul.header-icons li.header-icon-list {
-  display: inline;
-  text-align: center;
-  list-style: none;
-}
-/* line 15, ../sass/home.scss */
-nav#main-nav ul.header-icons li.header-icon-list .img-icons {
+
+/*div#header-logo{
+  */
+  /*display: table-cell;
+vertical-align: middle;
+height: $header-height;*/
+                         /*
+position:absolute;
+width:100%;
+height:100%;
+text-align: center;
+#logo-img-span{
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  */
+  /*border: $user-border;
+height: $header-height;*/
+                             /*
+  }
+  #main-logo-img{
+    display: inline-block;
+    vertical-align: middle;
+  }
+}*/
+/* line 54, ../sass/home.scss */
+img.img-icons {
   width: 30px;
   height: 30px;
+}
+
+/*
+|main menu icons
+*/
+/*
+|user box style
+|here we have user's name and other icons like
+|settings
+*/
+/* line 70, ../sass/home.scss */
+#header-main-table {
+  display: table;
+  height: 150px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* line 76, ../sass/home.scss */
+#header-main-row {
+  display: table-row;
+}
+
+/* line 79, ../sass/home.scss */
+.header-main {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 5px;
+}
+
+/* line 84, ../sass/home.scss */
+#header-messages {
+  margin-left: 15px;
+  padding-left: 25px;
+}
+
+/* line 91, ../sass/home.scss */
+div#user-table {
+  display: table;
+  height: 150px;
+}
+
+/* line 95, ../sass/home.scss */
+div#user-row {
+  display: table-row;
+}
+
+/* line 98, ../sass/home.scss */
+div.user-header {
+  display: table-cell;
+  padding: 2px;
+  border: 2px solid #D56B3E;
+  vertical-align: middle;
+}
+
+/* line 104, ../sass/home.scss */
+div#user-name {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+/* line 105, ../sass/home.scss */
+div#user-name a {
+  text-decoration: none !important;
+}
+
+/* line 111, ../sass/home.scss */
+div#user-caret {
+  border-left: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* line 116, ../sass/home.scss */
+div#user-setting {
+  border: none;
+  padding-left: 10px;
 }

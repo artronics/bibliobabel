@@ -2,8 +2,8 @@
 
 $container-breakpoint:2000px;
 $container-max-width:1140px;
-$header-width:150px;//gutter(10)*3;
-$header-max-width:$header-width;
+$header-height:150px;//gutter(10)*3;
+$header-max-width:$header-height;
 
 $header-icon-width:30px;
 $header-icon-height:$header-icon-width;
@@ -42,7 +42,7 @@ div,header,nav,article,aside,section,ul{
 #home-header{
   @include span(full);
   @include clearfix;
-  height: $header-width;
+  height: $header-height;
   position: fixed;
   #header-logo{
     @include span(2 of 10);
@@ -57,7 +57,7 @@ div,header,nav,article,aside,section,ul{
 #main-section{
   @include span(full);
   @include clearfix;
-  margin-top: $header-width;
+  margin-top: $header-height;
 
 }
 

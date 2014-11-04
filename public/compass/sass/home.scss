@@ -2,22 +2,118 @@
 @import "layouts/home";
 
 
-nav#main-nav{
+$user-font-size:1.5em;//for user's name on top right
+$user-font-height:1.5em;
+$user-border-radius:5px;
+$user-border-color:#D56B3E;
+$user-border-style:solid;
+$user-border-wiegth:2px;
+$user-border:#{$user-border-wiegth} #{$user-border-style} #{$user-border-color};
+/******************
+|Header style
+*******************
+*/
+
+/*
+| Logo (also read Note)
+*/
+
+div#header-logo{
+  height: $header-height;
+}
+
+//NOTE:
+//the code below is centering the logo img
+//since size of logo is know i decided to comment this
+//however this trick gonna be usefull
+// source:
+// http://stackoverflow.com/questions/4888223/align-image-in-center-and-middle-within-div
+/*div#header-logo{
+  *//*display: table-cell;
+  vertical-align: middle;
+  height: $header-height;*//*
+  position:absolute;
+  width:100%;
+  height:100%;
   text-align: center;
-  ul.header-icons{
-    text-align: center;
-    list-style: none;
-    display: inline;
-    li.header-icon-list{
-      display: inline;
-      text-align: center;
-      list-style: none;
-      .img-icons {
-        width: $header-icon-width;
-        height: $header-icon-height;
-      }
-    }
+  #logo-img-span{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    *//*border: $user-border;
+    height: $header-height;*//*
   }
+  #main-logo-img{
+    display: inline-block;
+    vertical-align: middle;
+  }
+}*/
+
+
+
+img.img-icons {
+  width: $header-icon-width;
+  height: $header-icon-height;
+}
+
+/*
+|main menu icons
+*/
+
+
+/*
+|user box style
+|here we have user's name and other icons like
+|settings
+*/
+
+#header-main-table{
+  display: table;
+  height: $header-height;
+  margin-right: auto;
+  margin-left: auto;
+}
+#header-main-row{
+  display: table-row;
+}
+.header-main{
+  display: table-cell;
+  vertical-align: middle;
+  padding: 5px;
+}
+#header-messages{
+  margin-left: 15px;
+  padding-left: 25px;
 }
 
 
+
+div#user-table{
+  display: table;
+  height: $header-height;
+}
+div#user-row{
+  display: table-row;
+}
+div.user-header{
+  display: table-cell;
+  padding: 2px;
+  border: $user-border;
+  vertical-align: middle;
+}
+div#user-name{
+  a{
+    text-decoration: none !important;
+  }
+  border-top-left-radius: $user-border-radius;
+  border-bottom-left-radius: $user-border-radius;
+}
+div#user-caret{
+  border-left: none;
+  border-top-right-radius: $user-border-radius;
+  border-bottom-right-radius: $user-border-radius;
+}
+div#user-setting{
+  border: none;
+  padding-left: 10px;
+}
