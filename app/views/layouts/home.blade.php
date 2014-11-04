@@ -19,10 +19,10 @@
                             <a href="#"><img class="img-icons" src="/img/icons/library.svg"></a>
                         </div>
                         <div class="header-main" id="header-messages">
-                            <a href="#"><img class="img-icons" src="/img/icons/message.svg"></a>
+                            <a class="header-icon-a" href="#"><img class="img-icons" src="/img/icons/message.svg"><span class="counter-icon">5</span></a>
                         </div>
                         <div class="header-main" id="header-notifications">
-                            <a href="#"><img class="img-icons" src="/img/icons/notification.svg"></a>
+                            <a class="header-icon-a" href="#"><img class="img-icons" src="/img/icons/notification.svg"><span class="counter-icon">99</span></a>
                         </div>
                     </div>
                 </div>

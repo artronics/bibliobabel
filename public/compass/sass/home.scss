@@ -49,6 +49,31 @@ div#header-logo{
   }
 }*/
 
+/*
+|Counter icon
+|this is what apears when you have notifications or messages
+|as small icon at top right of the parent icon
+*/
+.counter-icon {
+  position:absolute;
+  top:-2px;
+  right:-5px;
+  text-align: left;
+  background-color:#FF0000;
+  color:#fff;
+  padding:2px;
+  font-family:tahoma, arial, 'sans-serif';
+  font-size:9px;
+  font-weight:bold;
+  border: 1px solid #ffffff;
+  border-radius: 30%;
+}
+.header-icon-a{
+  border: none;
+  display:inline-block;
+  position:relative;
+  text-decoration:none;
+}
 
 
 img.img-icons {
@@ -85,8 +110,6 @@ img.img-icons {
   margin-left: 15px;
   padding-left: 25px;
 }
-
-
 
 div#user-table{
   display: table;

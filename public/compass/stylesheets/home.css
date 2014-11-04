@@ -469,7 +469,36 @@ height: $header-height;*/
     vertical-align: middle;
   }
 }*/
-/* line 54, ../sass/home.scss */
+/*
+|Counter icon
+|this is what apears when you have notifications or messages
+|as small icon at top right of the parent icon
+*/
+/* line 57, ../sass/home.scss */
+.counter-icon {
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  text-align: left;
+  background-color: #FF0000;
+  color: #fff;
+  padding: 2px;
+  font-family: tahoma, arial, 'sans-serif';
+  font-size: 9px;
+  font-weight: bold;
+  border: 1px solid #ffffff;
+  border-radius: 30%;
+}
+
+/* line 71, ../sass/home.scss */
+.header-icon-a {
+  border: none;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+/* line 79, ../sass/home.scss */
 img.img-icons {
   width: 30px;
   height: 30px;
@@ -483,7 +512,7 @@ img.img-icons {
 |here we have user's name and other icons like
 |settings
 */
-/* line 70, ../sass/home.scss */
+/* line 95, ../sass/home.scss */
 #header-main-table {
   display: table;
   height: 150px;
@@ -491,36 +520,36 @@ img.img-icons {
   margin-left: auto;
 }
 
-/* line 76, ../sass/home.scss */
+/* line 101, ../sass/home.scss */
 #header-main-row {
   display: table-row;
 }
 
-/* line 79, ../sass/home.scss */
+/* line 104, ../sass/home.scss */
 .header-main {
   display: table-cell;
   vertical-align: middle;
   padding: 5px;
 }
 
-/* line 84, ../sass/home.scss */
+/* line 109, ../sass/home.scss */
 #header-messages {
   margin-left: 15px;
   padding-left: 25px;
 }
 
-/* line 91, ../sass/home.scss */
+/* line 114, ../sass/home.scss */
 div#user-table {
   display: table;
   height: 150px;
 }
 
-/* line 95, ../sass/home.scss */
+/* line 118, ../sass/home.scss */
 div#user-row {
   display: table-row;
 }
 
-/* line 98, ../sass/home.scss */
+/* line 121, ../sass/home.scss */
 div.user-header {
   display: table-cell;
   padding: 2px;
@@ -528,24 +557,24 @@ div.user-header {
   vertical-align: middle;
 }
 
-/* line 104, ../sass/home.scss */
+/* line 127, ../sass/home.scss */
 div#user-name {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-/* line 105, ../sass/home.scss */
+/* line 128, ../sass/home.scss */
 div#user-name a {
   text-decoration: none !important;
 }
 
-/* line 111, ../sass/home.scss */
+/* line 134, ../sass/home.scss */
 div#user-caret {
   border-left: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-/* line 116, ../sass/home.scss */
+/* line 139, ../sass/home.scss */
 div#user-setting {
   border: none;
   padding-left: 10px;
