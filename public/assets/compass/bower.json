@@ -1,0 +1,12 @@
+{
+  "name": "bibliobabel",
+  "version": "1.0.0",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "foundation": "~5.4.7",
+    "foundation-icon-fonts": "*"
+  }
+}

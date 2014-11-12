@@ -7,10 +7,10 @@
         <header id="home-header">
             <div class="logo" id="header-logo">
                 <span id="logo-img-span"></span>
-                <img id="main-logo-img" src="http://www.placehold.it/250x50 alt="Bibliobabel Logo"/>
+                <img id="main-logo-img" src="http://www.placehold.it/250x50" alt="Bibliobabel Logo"/>
             </div>
             <nav id="main-nav">
-                <div id="header-main-table">
+                {{--<div id="header-main-table">
                     <div id="header-main-row">
                         <div class="header-main" id="header-home">
                             <a href="#"><img class="img-icons" src="/img/icons/home.svg"></a>
@@ -25,6 +25,19 @@
                             <a class="header-icon-a" href="#"><img class="img-icons" src="/img/icons/notification.svg"><span class="counter-icon">99</span></a>
                         </div>
                     </div>
+                </div>--}}
+                <div class="header-icons" id="main-icons">
+                    <ul>
+                        <li><a href="#"><img class="img-icons" src="/img/icons/__home.svg"></a></li>
+                        <li><a href="#"><img class="img-icons" src="/img/icons/__library.svg"></a></li>
+                    </ul>
+
+                </div>
+                <div class="header-icons" id="message-icons">
+                    <ul>
+                        <li><a href="#"><img class="img-icons" src="/img/icons/__home.svg"></a></li>
+                        <li><a href="#"><img class="img-icons" src="/img/icons/__library.svg"></a></li>
+                    </ul>
                 </div>
             </nav>
             <nav id="user">
@@ -88,27 +101,5 @@
             </aside>
         </section>
     </div>
-
-    {{--<div class="container">--}}
-        {{--<div class="header">--}}
-            {{--@include('include.home.header')--}}
-
-        {{--</div>--}}
-
-        {{--<div class="nav">--}}
-            {{--@include('include.home.nav')--}}
-        {{--</div>--}}
-
-        {{--<div class="left-sidebar">--}}
-            {{--@include('include.home.left-sidebar')--}}
-        {{--</div>--}}
-
-        {{--<div class="main">--}}
-            {{--@include('include.home.main')--}}
-            {{--@include('include.home.main')--}}
-            {{--@include('include.home.main')--}}
-
-        {{--</div>--}}
-    {{--</div>--}}
 
 @stop

@@ -13,3 +13,5 @@ bibliobabel.sublime-workspace
 bibliobabel.sublime-project
 
 public/compass/.sass-cache
+public/assets/compass/.sass-cache
+public/assets/compass/bower_components
