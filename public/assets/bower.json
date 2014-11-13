@@ -4,6 +4,7 @@
   "private": "true",
   "dependencies": {
     "foundation": "zurb/bower-foundation",
-    "foundation-icons": "*"
+    "foundation-icons": "*",
+    "font-awsome": "~4.2.0"
   }
 }
