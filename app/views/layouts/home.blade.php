@@ -1,105 +1,48 @@
 @extends('layouts.base')
 
+@section('stylesheets')
+    <link rel="stylesheet" href="/assets/stylesheets/home.css" />
+    <link rel="stylesheet" href="/assets/fonts/css/font-awesome.css" />
+@stop
+
+@section('scripts')
+    <script src="/assets/bower_components/modernizr/modernizr.js"></script>
+@stop
+
+@section('footer_scripts')
+    <script src="/assets/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/bower_components/foundation/js/foundation.js"></script>
+    <script src="/assets/bower_components/foundation/js/foundation/foundation.topbar.js"></script>
+    <script src="/assets/bower_components/foundation/js/foundation/foundation.dropdown.js"></script>
+    <script src="/assets/js/app.js"></script>
+@stop
+
 @section('body')
 
-    <div class="container">
+    @include('include.home.header')
 
-        <header id="home-header">
-            <div class="logo" id="header-logo">
-                <span id="logo-img-span"></span>
-                <img id="main-logo-img" src="http://www.placehold.it/250x50" alt="Bibliobabel Logo"/>
-            </div>
-            <nav id="main-nav">
-                {{--<div id="header-main-table">
-                    <div id="header-main-row">
-                        <div class="header-main" id="header-home">
-                            <a href="#"><img class="img-icons" src="/img/icons/home.svg"></a>
-                        </div>
-                        <div class="header-main" id="header-library">
-                            <a href="#"><img class="img-icons" src="/img/icons/library.svg"></a>
-                        </div>
-                        <div class="header-main" id="header-messages">
-                            <a class="header-icon-a" href="#"><img class="img-icons" src="/img/icons/message.svg"><span class="counter-icon">5</span></a>
-                        </div>
-                        <div class="header-main" id="header-notifications">
-                            <a class="header-icon-a" href="#"><img class="img-icons" src="/img/icons/notification.svg"><span class="counter-icon">99</span></a>
-                        </div>
-                    </div>
-                </div>--}}
-                <div class="header-icons" id="main-icons">
-                    <ul>
-                        <li><a href="#"><img class="img-icons" src="/img/icons/__home.svg"></a></li>
-                        <li><a href="#"><img class="img-icons" src="/img/icons/__library.svg"></a></li>
-                    </ul>
-
-                </div>
-                <div class="header-icons" id="message-icons">
-                    <ul>
-                        <li><a href="#"><img class="img-icons" src="/img/icons/__home.svg"></a></li>
-                        <li><a href="#"><img class="img-icons" src="/img/icons/__library.svg"></a></li>
-                    </ul>
-                </div>
-            </nav>
-            <nav id="user">
-                <div id="user-table">
-                    <div id="user-row">
-                        <div class="user-header" id="user-name">
-                            <a href="#"><h2 id="header-user-heading">{{Auth::user()->name}}</h2></a>
-                        </div>
-                        <div class="user-header" id="user-caret">
-                            <a href="#"><img class="img-icons" src="/img/icons/caret.svg" alt=""/></a>
-                        </div>
-                        <div class="user-header" id="user-setting">
-                            <a href="#"><img class="img-icons"  src="/img/icons/setting.svg" alt=""/></a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <section id="main-section">
-            <aside class="links-aside" id="links-section">
-                <h2>LINKS</h2>
-                <div class="links">
-                    <h2>LINKS2</h2>
-                </div>
-                <div class="links">
-                    <h2>LINKS2</h2>
-                </div>
-            </aside>
-
-            <section id="posts-section">
-                <h2>POSTS</h2>
-                <article class="posts">
-                    <h2>POST-1</h2>
-                </article>
-                <article class="posts">
-                    <h2>POST-2</h2>
-                </article>
-                <article class="posts">
-                    <h2>POST-3</h2>
-                </article>
-                <article class="posts">
-                    <h2>POST-1</h2>
-                </article>
-                <article class="posts">
-                    <h2>POST-2</h2>
-                </article>
-                <article class="posts">
-                    <h2>POST-3</h2>
+    <div class="row">
+        <div class="small-12 medium-8 large-6 large-push-3 columns">
+            <section class="posts">
+                <article class="post" id="post_1">
+                    @include('include.home.post')
                 </article>
             </section>
+        </div>
 
-            <aside class="links-aside" id="subnav-section">
-                    <h2>SUB NAV</h2>
-                    <nav class="subnav">
-                        <h2>SUB NAV1</h2>
-                    </nav>
-                    <nav class="subnav">
-                        <h2>SUB NAV1</h2>
-                    </nav>
-            </aside>
-        </section>
+        <div class="large-3 medium-4 large-push-3 hide-for-small-down columns">
+            <h1>side right</h1>
+            <p>my Air Service was formed in 1930, and became an independent air force in 1937. It had little involvement in the Second World War. From 1948 to 1973 it took part, with generally mediocre results, in four separate wars with Israel, as well as the quasi-War of Attrition. It also supported the Egyptian Army during the North Yemen Civil </p>
+        </div>
+        <div class="large-3 large-pull-9 hide-for-medium-down columns">
+            <h1>side left</h1>
+            <a href="#" class="button split">Split Button <span data-dropdown="drop"></span></a><br>
+            <ul id="drop" class="f-dropdown" data-dropdown-content>
+              <li><a href="#">This is a link</a></li>
+              <li><a href="#">This is another</a></li>
+              <li><a href="#">Yet another</a></li>
+            </ul>
+        </div>
     </div>
 
 @stop

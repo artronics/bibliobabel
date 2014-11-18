@@ -1,4 +1,4 @@
-<?php namespace Acme\User;
+<?php namespace Artronics\User;
 
 use Illuminate\Auth\UserTrait;
 use Illuminate\Auth\UserInterface;

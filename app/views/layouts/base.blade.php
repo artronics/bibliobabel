@@ -1,14 +1,22 @@
 <!doctype html>
 <html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <script ></script>
-    <link href="/compass/stylesheets/home.css" rel="stylesheet" type="text/css">
-    {{--<link href="/css/layoutTest.css" rel="stylesheet">--}}
+    {{--here we'll fake php variables which is not already defined
+        like title
+      TODO: it doesn't work. the temporary way is using a statement like this
+      {{{$pageTitle or 'Default'}}}--}}
 
-    <title>home page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    @yield('stylesheets')
+    @yield('scripts')
+
+    <title>{{{$pageTitle or 'Bibliobabel'}}}</title>
+
 </head>
 <body>
     @yield('body')
+    @yield('footer_scripts')
 </body>
 </html>

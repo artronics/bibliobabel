@@ -1,10 +1,21 @@
-//debug
+/*//debug
 div{
-  padding-top: 30px;
-  padding-bottom: 30px;
-  border: 2px solid orange;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border: 1px solid orange;
 //  background-color: blue;
-}
+}*/
+
+$topbar-top-margin-diff:6px; //this is the difference between components actual size and topbar heigh
+$topbar-logo-width:120px;
+
+//this is the marigin or padding between some elements in post
+//like the padding between profile picture and username
+$post-base-padding:5;
+
+$post-profile-pic-size:50;
+$comment-profile-pic-size:40;
+
 
 .size-12 { font-size: 12px; }
 .size-14 { font-size: 14px; }
