@@ -1,8 +1,17 @@
 <?php
 use Artronics\User\User;
+use Artronics\Validation\UserValidator;
+use Artronics\Validation\ValidationException;
 
 class UsersController extends \BaseController
 {
+    protected $validator;
+
+    function __construct(UserValidator $validator)
+    {
+        $this->validator = $validator;
+    }
+
     /**
      * Display a listing of users
      *
@@ -32,18 +41,29 @@ class UsersController extends \BaseController
      */
     public function store()
     {
-        $validator = Validator::make($data = Input::all(), User::$rules);
+        $data = Input::all();
 
-        if ($validator->fails()) {
-            // return Redirect::back()->withErrors($validator)->withInput();
-            return $validator->messages();
-
+        /*
+         * Here we check if user porovided correct
+         * inputs. If not we redirect her back.
+         * we also provide some messages so according view would
+         * show appropriate messages to user
+         */
+        try{
+            $this->validator->checkInput($data);
+        }catch(ValidationException $e){
+            //TODO: find a way to show the user appropiate messages
+            return Redirect::back()->WithInput()->With('message','Your email address has been regigistered.');
         }
 
-        $data['password'] = Hash::make($data['password']);
-        User::create($data);
 
-        return Redirect::route('users.index');
+
+        \Event::fire('user.creating',[$data]);
+
+        $data['password'] = Hash::make($data['password']);
+        $user = User::create($data);
+        Auth::login($user);
+        return Redirect::route('home');
     }
 
     /**
