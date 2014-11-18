@@ -1,6 +1,5 @@
-<?php namespace Artronic\Validation;
+<?php namespace Artronics\Validation;
 
-use Artronics\Validation\ValidationException;
 use Illuminate\Validation\Factory;
 
 abstract class Validator
