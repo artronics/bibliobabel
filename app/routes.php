@@ -1,17 +1,18 @@
 <?php
 
+Route::resource('sessions', 'SessionsController',['only'=>['create','store', 'destroy']]);
+
 /*
     Here is all pages that is somehow static
     PagesController is in charge of controlling those views
 */
-Route::resource('users', 'UsersController');
-Route::resource('sessions', 'SessionsController',['only'=>['create','store', 'destroy']]);
-
-Route::get('login', 'SessionsController@create');
-Route::get('logout', 'SessionsController@destroy');
-
-Route::get('profile', function () {
-    return 'y;our rmail address is ' . Auth::user()->email;
-})->before('auth');
-
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@index']);
+
+Route::post('register', ['as' => 'users.store', 'uses' => 'UsersController@store']);
+Route::get('logout', ['as' => 'logout','uses' => 'SessionsController@destroy']);
+
+//TODO: we dont have specific views for these two routes yet: make it!
+Route::get('register', ['as' => 'users.store','uses' => 'UsersController@store']);
+Route::get('login', ['as' => 'login','uses' => 'SessionsController@create']);
+
+
