@@ -1,5 +1,5 @@
     {{--<div class="post-components-divider">--}}
-        @include('......include.home.status')
+        @include('home.partials.status')
         <header>
             <div class="post-header clearfix">
                 <img src="http://placehold.it/50x50" alt="profile picture" class="post-profile-pic"/>

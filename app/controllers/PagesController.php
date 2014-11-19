@@ -24,7 +24,7 @@ class PagesController extends \BaseController {
 //            $this->showStartPage();
 
 
-            return View::make('home.homepage');
+            return View::make('startpage.startpage');
 
         }
 	}

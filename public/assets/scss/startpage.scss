@@ -1,0 +1,169 @@
+@import "settings";
+@import "foundation";
+@import "base";
+@import "theme";
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switches",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
+
+
+#logo{
+  height: $topbar-height - $topbar-top-margin-diff;
+  width: $topbar-logo-width;
+}
+.header-icons{
+
+  vertical-align: middle;
+}
+.top-bar-section ul li{
+  display: inline-block;
+  margin-left: 3px;
+}
+.header-divider{
+  margin-right: 20px;
+}
+/*
+Post syles
+*/
+
+section.posts{
+  background-color: #4e4e4e;
+  padding: 5px 1%;
+  margin-top: 0 !important;
+}
+article.post{
+  padding:2px 2px;
+  background-color: #ffffff;
+  border: 1px solid rgba(21, 8, 212, 0.83);
+  border-radius: $post-border-radius;
+}
+.post-components-divider{
+  //  background-color: red;
+  //  margin:0 15%;
+}
+.post-content{
+  background-color: #ffffff;
+  margin-top: 5px;
+}
+.post-header{
+
+  min-height: $post-base-padding + $post-profile-pic-size*1px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #4e4e4e;
+}
+.post-header-content{
+  padding-left: ($post-base-padding + $post-profile-pic-size*1px);
+
+}
+.post-profile-pic{
+  float: left;
+}
+.post-username{
+  display: inline;
+  font-size: medium;
+  font-weight: bold;
+}
+.post-description:before {
+  //add an empty character space between username and description
+  content: "\00a0"; /* this is &nbsp; */
+}
+.post-description{
+  display: inline;
+  font-size: medium;
+}
+.post-time{ //TODO check with comment-time in production time. they're mostly the same
+  font-size: smaller;
+  margin-bottom: 0px;
+}
+
+
+.post-footer{
+
+}
+.post-social-dropdown{
+  @include dropdown-container(
+  $max-width:400px
+  );
+  padding: rem-calc(10);
+}
+#social-dropdown{
+  width: auto;
+}
+
+///Posts comments section****
+.post-comments{
+
+}
+.post-write-comment{
+  text-align: center;
+}
+.comment-input{
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+}
+.post-comment{
+  min-height: $post-base-padding + $comment-profile-pic-size*1px;
+}
+.comment-content-wrapper{
+  padding-left: ($post-base-padding + $comment-profile-pic-size*1px);
+}
+.comments-profile-pic{
+  float: left;
+}
+.comment-username{
+  display: inline;
+  font-size: small;
+  font-weight: bold;
+}
+.comment-content:before{
+  //add an empty character space between username and description
+  content: "\00a0"; /* this is &nbsp; */
+}
+.comment-content{
+  display: inline;
+  font-size: small;
+}
+.comment-time{
+  font-size: smaller;
+  margin-bottom: 0px;
+}
+
+.post-write-comment{
+
+}

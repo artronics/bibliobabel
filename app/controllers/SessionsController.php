@@ -2,6 +2,7 @@
 
 class SessionsController extends \BaseController
 {
+    //TODO: session controller dose not have views check this controller asap
 
     /**
      * Show the form for creating a new resource.
@@ -11,7 +12,7 @@ class SessionsController extends \BaseController
      */
     public function create()
     {
-        return View::make('sessions.create');
+        return Redirect::to('home');
     }
 
     /**
@@ -28,9 +29,8 @@ class SessionsController extends \BaseController
             'password' => $input['password'],
         ]);
         if ($attempt) {
-            return Redirect::intended('/');
+            return Redirect::route('home');
         }
-        dd('problem');
     }
 
 

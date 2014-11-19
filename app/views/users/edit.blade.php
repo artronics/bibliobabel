@@ -1,1 +1,0 @@
-/home/vagrant/projects/web/bibliobabel/app/views/users/edit.blade.php

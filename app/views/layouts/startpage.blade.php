@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('stylesheets')
-    <link rel="stylesheet" href="/assets/stylesheets/home.css" />
+    <link rel="stylesheet" href="/assets/stylesheets/startpage.css" />
     <link rel="stylesheet" href="/assets/fonts/css/font-awesome.css" />
 @stop
 
@@ -25,14 +25,13 @@
         <div class="small-12 medium-8 large-6 large-push-3 columns">
             <section class="posts">
                 <article class="post" id="post_1">
-                    @yield('post')
+                    @yield('signup-form')
                 </article>
             </section>
         </div>
 
         <div class="large-3 medium-4 large-push-3 hide-for-small-down columns">
-            <h1>side right</h1>
-            <p>my Air Service was formed in 1930, and became an independent air force in 1937. It had little involvement in the Second World War. From 1948 to 1973 it took part, with generally mediocre results, in four separate wars with Israel, as well as the quasi-War of Attrition. It also supported the Egyptian Army during the North Yemen Civil </p>
+            @yield('login-form')
         </div>
         <div class="large-3 large-pull-9 hide-for-medium-down columns">
             <h1>side left</h1>
