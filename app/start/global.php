@@ -51,6 +51,10 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+App::error(function(Artronics\Validation\FormValidationException $e)
+{
+    return Redirect::back()->WithInput();
+});
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
@@ -80,5 +84,5 @@ App::down(function()
 
 require app_path().'/filters.php';
 
-\Event::listen('user.creating','Artronics\Validation\UserValidator@fire');
+//\Event::listen('user.creating','Artronics\Validation\UserValidator@fire');
 

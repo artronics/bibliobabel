@@ -1,14 +1,33 @@
 <?php namespace Artronics\Validation;
 
-use Illuminate\Validation\Factory;
+use Illuminate\Validation\Factory as LaravelValidator;
 
-abstract class Validator
-{
-    protected  $validator;
+class Validator implements FactoryInterface {
 
-    function __construct(Factory $validator)
-    {
-        $this->validator = $validator;
-    }
+	/**
+	 * @var \Illuminate\Validation\Factory
+	 */
+	private $validator;
+
+	/**
+	 * @param LaravelValidator $validator
+	 */
+	function __construct(LaravelValidator $validator)
+	{
+		$this->validator = $validator;
+	}
+
+	/**
+	 * Initialize validation
+	 *
+	 * @param array $formData
+	 * @param array $rules
+	 * @param array $messages
+	 * @return \Illuminate\Validation\Validator
+	 */
+	public function make(array $formData, array $rules, array $messages = [])
+	{
+		return $this->validator->make($formData, $rules, $messages);
+	}
 
 }

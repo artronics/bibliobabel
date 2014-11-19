@@ -1,15 +1,21 @@
 <?php
+use Artronics\Forms\RegistrationForm;
+use Artronics\Repositories\UserRepository;
 use Artronics\User\User;
-use Artronics\Validation\UserValidator;
-use Artronics\Validation\ValidationException;
 
 class UsersController extends \BaseController
 {
     protected $validator;
+    protected $userRepo;
+    /**
+     * @var RegistrationForm
+     */
+    private $registrationForm;
 
-    function __construct(UserValidator $validator)
+    function __construct(RegistrationForm $registrationForm, UserRepository $userRepo)
     {
-        $this->validator = $validator;
+        $this->userRepo = $userRepo;
+        $this->registrationForm = $registrationForm;
     }
 
     /**
@@ -46,22 +52,20 @@ class UsersController extends \BaseController
         /*
          * Here we check if user porovided correct
          * inputs. If not we redirect her back.
-         * we also provide some messages so according view would
+         * we also provide some messages so, according view would
          * show appropriate messages to user
          */
-        try{
-            $this->validator->checkInput($data);
-        }catch(ValidationException $e){
-            //TODO: find a way to show the user appropiate messages
-            return Redirect::back()->WithInput()->With('message','Your email address has been regigistered.');
-        }
+        //TODO: find a way to show the user appropiate messages
+        //catch exception is located in global.php
+        $this->registrationForm->validate($data);
 
+        //TODO: this Hash facades should go to UserRepository->createUser() see createUser method
+        $data['password'] = Hash::make($data['password']);
 
+        $user = $this->userRepo->createUser($data);
 
         \Event::fire('user.creating',[$data]);
 
-        $data['password'] = Hash::make($data['password']);
-        $user = User::create($data);
         Auth::login($user);
         return Redirect::route('home');
     }

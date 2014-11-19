@@ -134,6 +134,10 @@ return array(
         'Illuminate\Workbench\WorkbenchServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
         // 'fzaninotto\faker\src\autoload.php',
+
+        //Here is my own Service Providers
+        'Artronics\Repositories\UserRepositoryServiceProvider',
+        'Artronics\Validation\ValidationServiceProvider'
     ),
 
     /*
