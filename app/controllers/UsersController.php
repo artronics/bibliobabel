@@ -57,10 +57,9 @@ class UsersController extends \BaseController
          */
         //TODO: find a way to show the user appropiate messages
         //catch exception is located in global.php
+        //Now in case of validation exception we redirect user to home page
+        //without any messages
         $this->registrationForm->validate($data);
-
-        //TODO: this Hash facades should go to UserRepository->createUser() see createUser method
-        $data['password'] = Hash::make($data['password']);
 
         $user = $this->userRepo->createUser($data);
 
