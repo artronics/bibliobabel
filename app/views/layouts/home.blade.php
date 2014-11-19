@@ -19,13 +19,13 @@
 
 @section('body')
 
-    @include('include.home.header')
+    @include('home.partials.header')
 
     <div class="row">
         <div class="small-12 medium-8 large-6 large-push-3 columns">
             <section class="posts">
                 <article class="post" id="post_1">
-                    @include('include.home.post')
+                    @include('home.partials.post')
                 </article>
             </section>
         </div>
