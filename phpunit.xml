@@ -15,4 +15,10 @@
             <directory>./app/tests/</directory>
         </testsuite>
     </testsuites>
+
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app/Artronics</directory>
+        </whitelist>
+    </filter>
 </phpunit>

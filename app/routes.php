@@ -15,4 +15,8 @@ Route::get('logout', ['as' => 'logout','uses' => 'SessionsController@destroy']);
 Route::get('register', ['as' => 'users.store','uses' => 'UsersController@store']);
 Route::get('login', ['as' => 'login','uses' => 'SessionsController@create']);
 
+/*
+ * Profiles
+ */
+Route::get('/profile={User_id}', 'ProfilesController@show');
 

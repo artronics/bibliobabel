@@ -10,7 +10,7 @@ class User extends \Eloquent implements UserInterface, RemindableInterface
 {
     use UserTrait, RemindableTrait;
 
-    public $timestamps=false;
+    public $timestamps=true;
 
     // Add your validation rules here
     public static $rules = [
@@ -40,6 +40,11 @@ class User extends \Eloquent implements UserInterface, RemindableInterface
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = Hash::make($password);
+    }
+
+    public function profile()
+    {
+        return $this->hasOne('Profile');
     }
 
 }

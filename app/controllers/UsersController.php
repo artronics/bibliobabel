@@ -1,6 +1,6 @@
 <?php
 use Artronics\Forms\RegistrationForm;
-use Artronics\Repositories\UserRepository;
+use Artronics\Repositories\UserRepository\UserRepositoryInterface as UserRepo;
 use Artronics\User\User;
 
 class UsersController extends \BaseController
@@ -12,7 +12,7 @@ class UsersController extends \BaseController
      */
     private $registrationForm;
 
-    function __construct(RegistrationForm $registrationForm, UserRepository $userRepo)
+    function __construct(RegistrationForm $registrationForm, UserRepo $userRepo)
     {
         $this->userRepo = $userRepo;
         $this->registrationForm = $registrationForm;

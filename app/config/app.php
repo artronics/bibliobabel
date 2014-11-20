@@ -136,7 +136,7 @@ return array(
         // 'fzaninotto\faker\src\autoload.php',
 
         //Here is my own Service Providers
-        'Artronics\Repositories\UserRepositoryServiceProvider',
+        'Artronics\Repositories\UserRepository\UserRepositoryServiceProvider',
         'Artronics\Validation\ValidationServiceProvider'
     ),
 
