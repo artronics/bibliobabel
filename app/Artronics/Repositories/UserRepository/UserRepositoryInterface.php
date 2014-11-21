@@ -5,5 +5,7 @@ interface UserRepositoryInterface
 {
     public function byId($username);
 
-    public function createUser($data);
+    public function createUser(array $data);
+
+    public function getProfile(array $data);
 }

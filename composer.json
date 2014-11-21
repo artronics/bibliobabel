@@ -24,7 +24,8 @@
 		],
 		"psr-4": {
 			"Artronics\\": "app/Artronics"
-		}
+		},
+        "files":["app/Artronics/helpers.php"]
 	},
 	"scripts": {
 		"post-install-cmd": [

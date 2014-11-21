@@ -12,16 +12,8 @@ class User extends \Eloquent implements UserInterface, RemindableInterface
 
     public $timestamps=true;
 
-    // Add your validation rules here
-    public static $rules = [
-        'email' => 'required|email',
-        'password' => 'required|confirmed',
-        'name' => 'required',
-        // 'title' => 'required'
-    ];
-
     // Don't forget to fill this array
-    protected $fillable = ['email', 'password', 'name'];
+    protected $fillable = ['email','username', 'password', 'name'];
 
     /**
      * The database table used by the model.
@@ -44,7 +36,7 @@ class User extends \Eloquent implements UserInterface, RemindableInterface
 
     public function profile()
     {
-        return $this->hasOne('Profile');
+        return $this->hasOne('Artronics\Profile\Profile');
     }
 
 }

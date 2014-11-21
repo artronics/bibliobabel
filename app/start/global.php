@@ -55,6 +55,7 @@ App::error(function(Artronics\Validation\FormValidationException $e)
 {
     return Redirect::back()->WithInput();
 });
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler

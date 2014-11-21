@@ -1,4 +1,8 @@
 <?php
+#Patterns
+#id should match any number between 1 to 20 digits number
+//TODO: for test purpose I changed it to accept 5 digits
+Route::pattern('id', '[1-9][0-9]{0,4}');
 
 Route::resource('sessions', 'SessionsController',['only'=>['create','store', 'destroy']]);
 
@@ -18,5 +22,5 @@ Route::get('login', ['as' => 'login','uses' => 'SessionsController@create']);
 /*
  * Profiles
  */
-Route::get('/profile={User_id}', 'ProfilesController@show');
+Route::get('/user/{id}', 'ProfilesController@show');
 

@@ -1,13 +1,21 @@
 <?php
 use Artronics\Repositories\UserRepository\UserRepositoryInterface as UserRepo;
+use Artronics\User\User;
+use Artronics\Profile\Profile;
 
 /**
  * Class ProfilesController
  */
 class ProfilesController extends \BaseController {
 
+    /**
+     * @var UserRepo
+     */
     protected $userRepo;
 
+    /**
+     * @param UserRepo $userRepo
+     */
     function __construct(UserRepo $userRepo)
     {
         $this->userRepo = $userRepo;
@@ -54,10 +62,11 @@ class ProfilesController extends \BaseController {
      * @internal param $username
      * @return Response
      */
-	public function show($id)
+	public function show($user_id)
 	{
-        $user = $this->userRepo->byId($id);
-        dd($user);
+        $data = ['user_id' => $user_id];
+        $profile = $this->userRepo->getProfile($data);
+        //dd($profile->toArray());
         return View::make('profiles.show');
 	}
 
