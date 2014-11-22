@@ -5,7 +5,8 @@ class Profile extends \Eloquent
 
     public $timestamps=true;
 
-    protected $fillable = [];
+    protected $fillable = ['user_id','about', 'location',
+                            'facebook_username', 'twitter_username'];
 
     /**
      * The database table used by the model.
@@ -17,6 +18,10 @@ class Profile extends \Eloquent
     public function user()
     {
         return $this->belongsTo('Artronics\User\User');
+    }
+
+    public function get(){
+        
     }
 
 

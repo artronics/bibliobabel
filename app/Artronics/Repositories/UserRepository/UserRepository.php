@@ -9,15 +9,18 @@ class UserRepository implements UserRepositoryInterface
 {
 
     protected $user;
+
     protected $profile;
+    protected $defaultProfile =[
+        'about' => 'salam',
+    ];
 
     function __construct(User $user)
     {
         $this->user = $user;
     }
 
-
-    public function createUser(array $data)
+    public function add(array $data)
     {
 
         /*
@@ -33,9 +36,10 @@ class UserRepository implements UserRepositoryInterface
         $data['username'] = $username;
         
         //atempt to save user to database
-        
-        $newUser = $this->user->create($data);
 
+        $newUser = $this->user->create($data);
+        //Create Default Profile
+        $newUser->profile()->create($this->defaultProfile);
         return $newUser;
     }
 
@@ -53,11 +57,9 @@ class UserRepository implements UserRepositoryInterface
         return $foundUser;
     }
 
-    public function getProfile(array $data)
+    public function getProfile($user_id)
     {
-        $user_id = $data['user_id'];
         $profile=$this->user->with("Profile")->whereId($user_id)->firstOrFail();
-
 
         return $profile;
     }

@@ -61,7 +61,7 @@ class UsersController extends \BaseController
         //without any messages
         $this->registrationForm->validate($data);
 
-        $user = $this->userRepo->createUser($data);
+        $user = $this->userRepo->add($data);
 
         \Event::fire('user.creating',[$data]);
 

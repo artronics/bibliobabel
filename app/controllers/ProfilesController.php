@@ -64,8 +64,7 @@ class ProfilesController extends \BaseController {
      */
 	public function show($user_id)
 	{
-        $data = ['user_id' => $user_id];
-        $profile = $this->userRepo->getProfile($data);
+        $profile = $this->userRepo->getProfile($user_id);
         //dd($profile->toArray());
         return View::make('profiles.show');
 	}
