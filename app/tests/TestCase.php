@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
+
 class TestCase extends Illuminate\Foundation\Testing\TestCase {
 
 
@@ -12,6 +14,11 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
         parent::setUp(); // Don't forget this!
 
         $this->prepareForTests();
+    }
+
+    public function tearDown()
+    {
+        DB::rollback();
     }
 
 	/**
@@ -36,6 +43,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
     private function prepareForTests()
     {
         Artisan::call('migrate');
+        DB::beginTransaction();
         Mail::pretend(true);
     }
 

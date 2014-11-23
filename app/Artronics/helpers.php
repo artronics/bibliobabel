@@ -2,7 +2,7 @@
 
 use Artronics\Utilities\Username;
 
-function makeUsernam($data)
+function makeUsername($data)
 {
     return Username::make($data);
 }

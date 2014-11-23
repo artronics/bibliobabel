@@ -12,8 +12,8 @@ class User extends \Eloquent implements UserInterface, RemindableInterface
 
     public $timestamps=true;
 
-    // Don't forget to fill this array
-    protected $fillable = ['email','username', 'password', 'name'];
+    //TODO: remove remember_token from this array. I added for testing
+    protected $fillable = ['email','username', 'password', 'name','remember_token'];
 
     /**
      * The database table used by the model.

@@ -31,7 +31,7 @@ class UserRepository implements UserRepositoryInterface
          * user model is in charge of creating this temp username
          */
         //TODO: it seems that repository is not a good place for username logic maybre model would be better
-        $username = makeUsernam($data);
+        $username = makeUsername($data);
 
         $data['username'] = $username;
         
