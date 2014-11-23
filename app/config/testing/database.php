@@ -7,7 +7,7 @@ return array(
     'connections' => array(
         'sqlite' => array(
             'driver'   => 'sqlite',
-            'database' => ':memory:',
+            'database' => __DIR__.'/../../database/testing.sqlite',
             'prefix'   => ''
         ),
     )

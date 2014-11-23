@@ -20,9 +20,4 @@ class Profile extends \Eloquent
         return $this->belongsTo('Artronics\User\User');
     }
 
-    public function get(){
-        
-    }
-
-
 }

@@ -15,6 +15,6 @@ class ProfileRepository implements ProfileRepositoryInterface
 
     public function add($user_id, array $data)
     {
-        $newUser = $this->profile->create($data);
+        return $this->profile->create($data);
     }
 }
