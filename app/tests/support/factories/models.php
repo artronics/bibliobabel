@@ -1,7 +1,7 @@
 <?php
 use League\FactoryMuffin\Facade as Muffin;
 
-Muffin::define('Artronics\User\User', array(
+Muffin::define('Artronics\Models\User\User', array(
     'name' => 'firstName',
     'email' => 'email|unique',
     'username' => 'username',
@@ -9,7 +9,7 @@ Muffin::define('Artronics\User\User', array(
     'remember_token' => 'password',
 ));
 
-Muffin::define('Artronics\Profile\Profile',array(
+Muffin::define('Artronics\Models\Profile\Profile',array(
     'about' => 'jalal',
-    'user_id' => 'factory|Artronics\User\User',
+    'user_id' => 'factory|Artronics\Models\User\User',
 ));

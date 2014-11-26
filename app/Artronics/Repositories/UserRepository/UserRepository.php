@@ -2,7 +2,7 @@
 
 
 use Artronics\Exceptions\NonExistantUserException;
-use Artronics\User\User;
+use Artronics\Models\User\User;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class UserRepository implements UserRepositoryInterface

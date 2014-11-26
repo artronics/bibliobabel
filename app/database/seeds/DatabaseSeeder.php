@@ -1,5 +1,5 @@
 <?php
-use Artronics\User\User;
+use Artronics\Models\User\User;
 
 class DatabaseSeeder extends Seeder
 {

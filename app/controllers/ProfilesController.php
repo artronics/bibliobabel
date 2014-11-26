@@ -1,7 +1,7 @@
 <?php
 use Artronics\Repositories\UserRepository\UserRepositoryInterface as UserRepo;
-use Artronics\User\User;
-use Artronics\Profile\Profile;
+use Artronics\Models\User\User;
+use Artronics\Models\Profile\Profile;
 
 /**
  * Class ProfilesController
@@ -64,7 +64,7 @@ class ProfilesController extends \BaseController {
      */
 	public function show($user_id)
 	{
-        $profile = $this->userRepo->getProfile($user_id);
+        //$profile = $this->userRepo->getProfile($user_id);
         //dd($profile->toArray());
         return View::make('profiles.show');
 	}

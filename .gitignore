@@ -16,3 +16,4 @@ public/compass/.sass-cache
 public/assets/compass/.sass-cache
 public/assets/compass/bower_components
 app/tests/coverage
+tests/_output/*

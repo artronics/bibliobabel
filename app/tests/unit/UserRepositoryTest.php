@@ -1,8 +1,6 @@
 <?php
 
 
-require 'vendor/phpunit/phpunit/src/Framework/Assert/functions.php';
-use Artronics\Repositories\UserRepository\UserRepositoryInterface as UserRepo;
 use League\FactoryMuffin\Facade as Muffin;
 
 class UserRepositoryTest extends TestCase
@@ -35,15 +33,15 @@ class UserRepositoryTest extends TestCase
          * then we instance our UserRepository
          * after executing add() method it should create a User and a Profile
          */
-        $user=new Artronics\User\User();
+        $user=new Artronics\Models\User\User();
         $userRepo=new Artronics\Repositories\UserRepository\UserRepository($user);
 
         //method under test
         $newUser=$userRepo->add($data);
         $newUserProfile = $newUser->profile;
 
-        assertInstanceOf('Artronics\User\User',$newUser);
-        assertInstanceOf('Artronics\Profile\Profile',$newUserProfile);
+        assertInstanceOf('Artronics\Models\User\User',$newUser);
+        assertInstanceOf('Artronics\Models\Profile\Profile',$newUserProfile);
 
     }
 }

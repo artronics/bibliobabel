@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\DB;
+require 'vendor/phpunit/phpunit/src/Framework/Assert/functions.php';
+
 
 class TestCase extends Illuminate\Foundation\Testing\TestCase {
 
@@ -14,6 +16,8 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
         parent::setUp(); // Don't forget this!
 
         $this->prepareForTests();
+
+        //$this->seed();
     }
 
     public function tearDown()

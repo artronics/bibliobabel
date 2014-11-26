@@ -1,4 +1,4 @@
-<?php namespace Artronics\Profile;
+<?php namespace Artronics\Models\Profile;
 
 
 interface ProfileInterface

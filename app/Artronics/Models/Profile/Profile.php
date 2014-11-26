@@ -1,4 +1,4 @@
-<?php namespace Artronics\Profile;
+<?php namespace Artronics\Models\Profile;
 
 class Profile extends \Eloquent
 {
@@ -17,7 +17,7 @@ class Profile extends \Eloquent
 
     public function user()
     {
-        return $this->belongsTo('Artronics\User\User');
+        return $this->belongsTo('Artronics\Models\User\User');
     }
 
 }

@@ -1,4 +1,4 @@
-<?php namespace Artronics\User;
+<?php namespace Artronics\Models\User;
 
 use Illuminate\Auth\UserTrait;
 use Illuminate\Auth\UserInterface;
@@ -37,7 +37,7 @@ class User extends \Eloquent implements UserInterface, RemindableInterface
 
     public function profile()
     {
-        return $this->hasOne('Artronics\Profile\Profile');
+        return $this->hasOne('Artronics\Models\Profile\Profile');
     }
 
 }

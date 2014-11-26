@@ -6,7 +6,6 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"watson/bootstrap-form": "0.8.*",
 		"illuminate/support": "~4.2",
 		"fzaninotto/faker": "~1.4"
 	},
@@ -14,7 +13,8 @@
         "phpspec/phpspec": "~2.0",
 		"way/generators": "~3.0",
 		"phpunit/phpunit": "~4.3.0",
-        "league/factory-muffin": "~2.0"
+        "league/factory-muffin": "~2.0",
+        "codeception/codeception": "*"
     },
 	"autoload": {
 		"classmap": [

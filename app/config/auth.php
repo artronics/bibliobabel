@@ -28,7 +28,7 @@ return array(
 	|
 	*/
 
-	'model' => 'Artronics\User\User',
+	'model' => 'Artronics\Models\User\User',
 
 	/*
 	|--------------------------------------------------------------------------

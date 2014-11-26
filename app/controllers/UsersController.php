@@ -1,7 +1,7 @@
 <?php
 use Artronics\Forms\RegistrationForm;
 use Artronics\Repositories\UserRepository\UserRepositoryInterface as UserRepo;
-use Artronics\User\User;
+use Artronics\Models\User\User;
 
 class UsersController extends \BaseController
 {

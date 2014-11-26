@@ -1,6 +1,5 @@
 <?php
-use Artronics\User\User;
-// Composer: "fzaninotto/faker": "v1.3.0"
+use Artronics\Models\User\User;
 use Faker\Factory as Faker;
 
 class UsersTableSeeder extends Seeder

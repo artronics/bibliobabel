@@ -1,7 +1,7 @@
 <?php namespace Artronics\Repositories\ProfileRepository;
 
 
-use Artronics\Profile\Profile;
+use Artronics\Models\Profile\Profile;
 
 class ProfileRepository implements ProfileRepositoryInterface
 {
