@@ -31,6 +31,9 @@ class SessionsController extends \BaseController
         if ($attempt) {
             return Redirect::route('home');
         }
+        else{
+            return Redirect::home()->withInput()->withErrors(['msg' => 'jkjhk','credential' => 'Invalid Credentials',]);
+        }
     }
 
 

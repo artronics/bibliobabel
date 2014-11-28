@@ -23,11 +23,9 @@
 
     <div class="row">
         <div class="small-12 medium-8 large-6 large-push-3 columns">
-            <section class="posts">
-                <article class="post" id="post_1">
+
                     @yield('signup-form')
-                </article>
-            </section>
+
         </div>
 
         <div class="large-3 medium-4 large-push-3 hide-for-small-down columns">

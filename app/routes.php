@@ -24,3 +24,5 @@ Route::get('login', ['as' => 'login','uses' => 'SessionsController@create']);
  */
 Route::get('/user/{id}', 'ProfilesController@show');
 
+Route::post('login/user', ['as' => 'login.user', 'uses' => 'SessionsController@store']);
+
