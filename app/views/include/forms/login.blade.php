@@ -10,12 +10,9 @@
                 {{ Form::password('password', array('placeholder' => 'Password'))}}
             </label>
 
-            <div data-alert class="alert-box alert radius">
-              {{$errors->first('credential')}}
-              <a href="#" class="close">&times;</a>
-            </div>
+            {{Form::alert('salam')}}
 
-                {{ Form::submit('Sign in', array('class'       => 'button radius tiny'))}}
+            {{ Form::submit('Sign in', array('class'       => 'button radius tiny'))}}
         </div>
     </div>
 {{ Form::close() }}

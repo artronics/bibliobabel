@@ -126,7 +126,8 @@ return array(
         //Here is my own Service Providers
         'Artronics\Repositories\UserRepository\UserRepositoryServiceProvider',
         'Artronics\Repositories\ProfileRepository\ProfileRepositoryServiceProvider',
-        'Artronics\Validation\ValidationServiceProvider'
+        'Artronics\Validation\ValidationServiceProvider',
+        'Artronics\Utilities\Html\HtmlServiceProvider'
     ),
 
     /*
