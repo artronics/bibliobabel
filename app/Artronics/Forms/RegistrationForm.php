@@ -8,9 +8,8 @@ use Laracasts\Validation\FormValidator;
 class RegistrationForm extends FormValidator
 {
     protected $rules = [
-        'email' => 'required|email',
+        'email' => 'required|email|unique:users,email',
         'password' => 'required|confirmed',
         'name' => 'required',
-        // 'title' => 'required'
     ];
 }

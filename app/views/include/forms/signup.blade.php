@@ -1,38 +1,31 @@
 {{ Form::open(array('route' => 'users.store','role' => 'form','class' => 'form')) }}
     <div class="large-12 columns">
-        {{ Form::label('name','Your Name: ')}}
-        {{ Form::text('name',null, array('class'       => 'form-control',
-                                            'id'          => 'name',
-                                            'placeholder' => 'Your Name'  ))}}
+        {{--{{ Form::label('name','Your Name: ')}}--}}
+        {{ Form::input('text', 'name',null, array('placeholder' => 'Your Name',
+                                                  ),'Your Name:')}}
+        {{Form::showError($errors, 'name', 'registration')}}
+    </div>
 
+    <div class="large-12 columns">
+        {{ Form::input('email', 'email',null, array('placeholder' => 'Your Email',
+                                                  ),'Your Email:')}}
+        {{Form::showError($errors, 'email', 'registration')}}
+    </div>
+    <div class="large-12 columns">
+        {{ Form::input('password', 'password',null, array('placeholder' => 'Your Password',
+                                                  ),'Your Password:')}}
+        {{Form::showError($errors, 'password', 'registration')}}
+    </div>
 
-        @if($errors->registration->has('email'))
-            @foreach($errors->registration->get('email') as $message)
-                <small class="error">{{$message}}</small>
-            @endforeach
-        @endif
+    <div class="large-12 columns">
+        {{ Form::input('password', 'password_confirmation',null, array('placeholder' => 'Confirm Your Password',
+                                                  ),'Confirm Password:')}}
+        {{Form::showError($errors, 'password_confirmation', 'registration')}}
     </div>
-    <div class="form-group">
-        {{ Form::label('email','Email: ')}}
-        {{ Form::text('email',null, array('class'       => 'form-control',
-                                            'id'          => 'email',
-                                            'placeholder' => 'Email'  ))}}
+
+    <div class="large-12 columns">
+        {{ Form::submit('Sign Up', array('class'       => 'button radius'))}}
     </div>
-    <div class="form-group">
-        {{ Form::label('password','Password: ')}}
-        {{ Form::password('password', array('class'       => 'form-control',
-                                            'id'          => 'password',
-                                             ))}}
-    </div>
-    <div class="form-group">
-        {{ Form::label('password_confirmation','Confirm Password: ')}}
-        {{ Form::password('password_confirmation', array('class'       => 'form-control',
-                                            'id'          => 'password-confirmation',
-                                             ))}}
-    </div>
-    <div class="form-group">
-        {{ Form::submit('Signup', array('class'       => 'btn btn-primary btn-lg btn-block',
-                                        'id'          => 'btn-signup'  ))}}
-    </div>
+
 
 {{ Form::close() }}

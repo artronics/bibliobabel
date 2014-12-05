@@ -4,6 +4,8 @@ namespace spec\Artronics\Utilities\Html;
 
 use Illuminate\Html\HtmlBuilder;
 use Illuminate\Routing\UrlGenerator;
+use Illuminate\Support\MessageBag;
+use Illuminate\Support\ViewErrorBag;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -31,6 +33,12 @@ class FoundationFormBuilderSpec extends ObjectBehavior
 
         $this->alert('Hello'
         )->shouldReturn('<div data-alert class="alert-box">Hello<a href="#" class="close">&times;</a></div>');
+    }
+
+    function it_shows_error_messages()
+    {
+        $errorBag = new MessageBag(['email' => 'Email address should be valid']);
+        $this->showError($errorBag,'email')->shouldReturn('<small class="error">Email address should be valid</small>');
     }
 
 
