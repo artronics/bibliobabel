@@ -51,10 +51,12 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
-App::error(function(Artronics\Validation\FormValidationException $e)
+App::error(function(\Artronics\Forms\RegistrationFormException $e)
 {
-    return Redirect::back()->WithInput();
+    return Redirect::back()->withInput()->withErrors($e->getPrevious()->getErrors(),'registration');
 });
+
+
 
 /*
 |--------------------------------------------------------------------------

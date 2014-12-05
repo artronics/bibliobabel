@@ -12,7 +12,7 @@ return array(
 	|
 	*/
 
-    'debug' => false,
+    'debug' => true,
 
     /*
 	|--------------------------------------------------------------------------
@@ -121,6 +121,8 @@ return array(
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
+        'Laracasts\Commander\CommanderServiceProvider',
+        'Laracasts\Validation\ValidationServiceProvider',
         // 'fzaninotto\faker\src\autoload.php',
 
         //Here is my own Service Providers

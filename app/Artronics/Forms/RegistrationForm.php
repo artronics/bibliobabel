@@ -1,7 +1,9 @@
 <?php namespace Artronics\Forms;
 
 
-use Artronics\Validation\FormValidator;
+//use Artronics\Validation\FormValidator;
+
+use Laracasts\Validation\FormValidator;
 
 class RegistrationForm extends FormValidator
 {

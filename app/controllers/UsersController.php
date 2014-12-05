@@ -1,5 +1,6 @@
 <?php
 use Artronics\Forms\RegistrationForm;
+use Artronics\Models\User\Commands\CreateUserCommand;
 use Artronics\Repositories\UserRepository\UserRepositoryInterface as UserRepo;
 use Artronics\Models\User\User;
 
@@ -49,6 +50,9 @@ class UsersController extends \BaseController
     {
         $data = Input::all();
 
+        $user = $this->execute(CreateUserCommand::class);
+
+
         /*
          * Here we check if user porovided correct
          * inputs. If not we redirect her back.
@@ -59,11 +63,11 @@ class UsersController extends \BaseController
         //catch exception is located in global.php
         //Now in case of validation exception we redirect user to home page
         //without any messages
-        $this->registrationForm->validate($data);
+       /* $this->registrationForm->validate($data);
 
         $user = $this->userRepo->add($data);
 
-        \Event::fire('user.creating',[$data]);
+        \Event::fire('user.creating',[$data]);*/
 
         Auth::login($user);
         return Redirect::route('home');

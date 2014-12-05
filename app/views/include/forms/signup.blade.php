@@ -1,9 +1,16 @@
 {{ Form::open(array('route' => 'users.store','role' => 'form','class' => 'form')) }}
-    <div class="form-group">
+    <div class="large-12 columns">
         {{ Form::label('name','Your Name: ')}}
         {{ Form::text('name',null, array('class'       => 'form-control',
                                             'id'          => 'name',
                                             'placeholder' => 'Your Name'  ))}}
+
+
+        @if($errors->registration->has('email'))
+            @foreach($errors->registration->get('email') as $message)
+                <small class="error">{{$message}}</small>
+            @endforeach
+        @endif
     </div>
     <div class="form-group">
         {{ Form::label('email','Email: ')}}

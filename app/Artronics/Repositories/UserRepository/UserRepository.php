@@ -20,7 +20,7 @@ class UserRepository implements UserRepositoryInterface
         $this->user = $user;
     }
 
-    public function add(array $data)
+    public function add($data)
     {
 
         /*
@@ -31,12 +31,11 @@ class UserRepository implements UserRepositoryInterface
          * user model is in charge of creating this temp username
          */
         //TODO: it seems that repository is not a good place for username logic maybre model would be better
-        $username = makeUsername($data);
+        $username = makeUsername($data['name']);
 
         $data['username'] = $username;
         
         //atempt to save user to database
-
         $newUser = $this->user->create($data);
         //Create Default Profile
         $newUser->profile()->create($this->defaultProfile);

@@ -4,14 +4,14 @@
 class Username
 {
     private  static $length=10;
-    public static function make(array $data)
+    public static function make($name)
     {
         /*
          * if user name consists of unicode character this method
          * do not replace them
          * todo: check if there is no problem with our database
          */
-        $name=$data['name'];
+
         //replacing all white spaces
         return preg_replace('/\s+/', '-', $name);
 
