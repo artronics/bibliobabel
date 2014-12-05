@@ -11,7 +11,7 @@ class UserRepository implements UserRepositoryInterface
     protected $user;
 
     protected $profile;
-    protected $defaultProfile =[
+    protected $defaultProfile = [
         'about' => 'salam',
     ];
 
@@ -34,7 +34,7 @@ class UserRepository implements UserRepositoryInterface
         $username = makeUsername($data['name']);
 
         $data['username'] = $username;
-        
+
         //atempt to save user to database
         $newUser = $this->user->create($data);
         //Create Default Profile
@@ -44,11 +44,11 @@ class UserRepository implements UserRepositoryInterface
 
     public function byId($id)
     {
-        try{
+        try {
             $foundUser = $this->user->whereId($id)->firstOrFail();
 //        }catch(NonExistantUserException $e){
-        //TODO: Find whether there is any better way to implement this
-        }catch(ModelNotFoundException $e){
+            //TODO: Find whether there is any better way to implement this
+        } catch (ModelNotFoundException $e) {
             throw new NonExistantUserException;
         }
 
@@ -58,10 +58,11 @@ class UserRepository implements UserRepositoryInterface
 
     public function getProfile($user_id)
     {
-        $profile=$this->user->with("Profile")->whereId($user_id)->firstOrFail();
+        $profile = $this->user->with("Profile")->whereId($user_id)->firstOrFail();
 
         return $profile;
     }
+
     /**
      * @param mixed $profile
      */

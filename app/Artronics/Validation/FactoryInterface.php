@@ -1,15 +1,16 @@
 <?php namespace Artronics\Validation;
 
-interface FactoryInterface {
+interface FactoryInterface
+{
 
-	/**
-	 * Initialize validator
-	 *
-	 * @param array $formData
-	 * @param array $rules
-	 * @param array $messages
-	 * @return ValidatorInterface
-	 */
-	public function make(array $formData, array $rules, array $messages = []);
+    /**
+     * Initialize validator
+     *
+     * @param array $formData
+     * @param array $rules
+     * @param array $messages
+     * @return ValidatorInterface
+     */
+    public function make(array $formData, array $rules, array $messages = []);
 
 } 

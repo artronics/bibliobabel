@@ -1,7 +1,6 @@
 <?php namespace Artronics\Models\User\Commands;
 
 
-
 //use Artronics\Forms\RegistrationForm;
 
 
@@ -23,9 +22,9 @@ class CreateUserValidator
     {
         $formData = get_object_vars($command);
 //        dd($formData);
-        try{
+        try {
             $this->validator->validate($formData);
-        }catch(FormValidationException $e){
+        } catch (FormValidationException $e) {
             throw new RegistrationFormException($e->getErrors(), null, $e);
         }
 //        $this->validator->validate($formData);

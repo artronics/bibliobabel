@@ -12,6 +12,6 @@ class ProfileRepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('Artronics\Repositories\ProfileRepository\ProfileRepositoryInterface',
-                         'Artronics\Repositories\ProfileRepository\ProfileRepository');
+            'Artronics\Repositories\ProfileRepository\ProfileRepository');
     }
 }

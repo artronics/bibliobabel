@@ -3,10 +3,10 @@
 class Profile extends \Eloquent
 {
 
-    public $timestamps=true;
+    public $timestamps = true;
 
-    protected $fillable = ['user_id','about', 'location',
-                            'facebook_username', 'twitter_username'];
+    protected $fillable = ['user_id', 'about', 'location',
+        'facebook_username', 'twitter_username'];
 
     /**
      * The database table used by the model.

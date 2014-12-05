@@ -6,10 +6,10 @@ class CreateUserCommand
 
     //For converting command object to array
     //these properties must be public. Do not chane them.
-    public  $name;
+    public $name;
     public $email;
-    public  $password;
-    public  $password_confirmation;
+    public $password;
+    public $password_confirmation;
 
     /**
      * @return mixed

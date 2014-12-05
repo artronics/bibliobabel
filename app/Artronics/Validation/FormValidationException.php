@@ -1,31 +1,32 @@
 <?php namespace Artronics\Validation;
 
-class FormValidationException extends \Exception {
+class FormValidationException extends \Exception
+{
 
-	/**
-	 * @var mixed
-	 */
-	protected $errors;
+    /**
+     * @var mixed
+     */
+    protected $errors;
 
-	/**
-	 * @param string $message
-	 * @param mixed  $errors
-	 */
-	function __construct($message, $errors)
-	{
-		$this->errors = $errors;
+    /**
+     * @param string $message
+     * @param mixed $errors
+     */
+    function __construct($message, $errors)
+    {
+        $this->errors = $errors;
 
-		parent::__construct($message);
-	}
+        parent::__construct($message);
+    }
 
-	/**
-	 * Get form validation errors
-	 *
-	 * @return mixed
-	 */
-	public function getErrors()
-	{
-		return $this->errors;
-	}
+    /**
+     * Get form validation errors
+     *
+     * @return mixed
+     */
+    public function getErrors()
+    {
+        return $this->errors;
+    }
 
 }

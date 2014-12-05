@@ -13,13 +13,13 @@ trait FormbuilderTrait
      * @param null $attributes
      * @return string
      */
-    public function wrap($html, $options=null, $attributes=null)
+    public function wrap($html, $options = null, $attributes = null)
     {
-        if (! is_null($attributes))
-            $attributes = ' '.implode(' ', $attributes);
+        if (!is_null($attributes))
+            $attributes = ' ' . implode(' ', $attributes);
 
-        if (! is_null($options))
-            $options=$this->attributes($options);
+        if (!is_null($options))
+            $options = $this->attributes($options);
 
         return "<div{$attributes}{$options}>{$html}</div>";
     }
@@ -37,20 +37,19 @@ trait FormbuilderTrait
     {
         //If there is no class key inside options then
         //we simply build one and return
-        if (! isset($options['class'])) {
+        if (!isset($options['class'])) {
             $options['class'] = $defaultClass;
             return $options;
-        }
-        else{
+        } else {
             //first lets see if user already specify default value
             //if so we'll return options as it was before
-            $classes = explode(' ',$options['class']);
+            $classes = explode(' ', $options['class']);
 
-            foreach($classes as $class)
+            foreach ($classes as $class)
                 if ($class == $defaultClass) return $options;
 
             //otherwise we add default class at the end with a space as delimiter
-            $options['class'] .= ' '. $defaultClass;
+            $options['class'] .= ' ' . $defaultClass;
 
             return $options;
         }
@@ -64,9 +63,9 @@ trait FormbuilderTrait
      * @param string $delimiter
      * @return null
      */
-    public function ApplyClassStyles($classStyles, $options=null, $delimiter = ' ')
+    public function ApplyClassStyles($classStyles, $options = null, $delimiter = ' ')
     {
-        if (! is_null($options['class']) & ! is_null($classStyles))
+        if (!is_null($options['class']) & !is_null($classStyles))
             $options['class'] .= $delimiter . implode($delimiter, $classStyles);
 
         else
@@ -84,27 +83,26 @@ trait FormbuilderTrait
         // For numeric keys we will assume that the key and the value are the same
         // as this will convert HTML attributes such as "required" to a correct
         // form like required="required" instead of using incorrect numerics.
-        foreach ((array) $options as $key => $value)
-        {
+        foreach ((array)$options as $key => $value) {
             $element = $this->attributeElement($key, $value);
 
-            if ( ! is_null($element)) $html[] = $element;
+            if (!is_null($element)) $html[] = $element;
         }
 
-        return count($html) > 0 ? ' '.implode(' ', $html) : '';
+        return count($html) > 0 ? ' ' . implode(' ', $html) : '';
     }
 
     /**
      * Build a single attribute element.
      *
-     * @param  string  $key
-     * @param  string  $value
+     * @param  string $key
+     * @param  string $value
      * @return string
      */
     protected function attributeElement($key, $value)
     {
         if (is_numeric($key)) $key = $value;
 
-        if ( ! is_null($value)) return $key.'="'.e($value).'"';
+        if (!is_null($value)) return $key . '="' . e($value) . '"';
     }
 }

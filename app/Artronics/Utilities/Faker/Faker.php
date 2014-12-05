@@ -6,7 +6,7 @@ use Faker\Factory;
 class Faker implements FactoryInterface
 {
     protected $faker;
-    protected $user=[
+    protected $user = [
         'name' => 'jalal',
         'email' => 'jj@jj.com1',
         'username' => 'jalal',
@@ -25,7 +25,7 @@ class Faker implements FactoryInterface
     public function getUser()
     {
 
-        $this->user['name']=$this->faker->name;
+        $this->user['name'] = $this->faker->name;
         return $this->user;
     }
 

@@ -3,7 +3,8 @@
 
 class Username
 {
-    private  static $length=10;
+    private static $length = 10;
+
     public static function make($name)
     {
         /*

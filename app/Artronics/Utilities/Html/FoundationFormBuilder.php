@@ -16,17 +16,16 @@ class FoundationFormBuilder extends IlluminateFormBuilder implements FoundationF
      * @param null $labelValue
      * @return string
      */
-    public function input($type, $name, $value = null, $options = array(),$labelValue = null)
+    public function input($type, $name, $value = null, $options = array(), $labelValue = null)
     {
-        if ( ! isset($options['name'])) $options['name'] = $name;
+        if (!isset($options['name'])) $options['name'] = $name;
 
         // We will get the appropriate value for the given field. We will look for the
         // value in the session for the value in the old input data then we'll look
         // in the model instance if one is set. Otherwise we will just use empty.
         $id = $this->getIdAttribute($name, $options);
 
-        if ( ! in_array($type, $this->skipValueTypes))
-        {
+        if (!in_array($type, $this->skipValueTypes)) {
             $value = $this->getValueAttribute($name, $value);
         }
 
@@ -39,7 +38,7 @@ class FoundationFormBuilder extends IlluminateFormBuilder implements FoundationF
 
         $html = '<input' . $this->attributes($options) . '>';
 
-        return $this->labelWrapper($html ,$labelValue);
+        return $this->labelWrapper($html, $labelValue);
     }
 
     /**
@@ -50,7 +49,7 @@ class FoundationFormBuilder extends IlluminateFormBuilder implements FoundationF
      * @internal param array $classStyles
      * @return string
      */
-    public function alert($message, array $options=array())
+    public function alert($message, array $options = array())
     {
         //Default attribute for alert
         $attributes = ['data-alert'];
@@ -61,10 +60,10 @@ class FoundationFormBuilder extends IlluminateFormBuilder implements FoundationF
         $options = $this->applyDefaultClass($options, $defaultClass);
 
         //Builds html wrapper
-        $html="{$message}<a href=\"#\" class=\"close\">&times;</a>";
+        $html = "{$message}<a href=\"#\" class=\"close\">&times;</a>";
 
         //Wraps it with div
-        $result = $this->wrap($html,$options, $attributes);
+        $result = $this->wrap($html, $options, $attributes);
 
         return $result;
     }
@@ -81,12 +80,11 @@ class FoundationFormBuilder extends IlluminateFormBuilder implements FoundationF
      */
     public function showError($errors, $name, $errorBagName = null)
     {
-        if (! is_null($errorBagName)) {
-            if ($errors->$errorBagName->first($name) =='') return;
+        if (!is_null($errorBagName)) {
+            if ($errors->$errorBagName->first($name) == '') return;
             else return "<small class=\"error\">{$errors->$errorBagName->first($name)}</small>";
-        }
-        else {
-            if ($errors->first($name) =='') return;
+        } else {
+            if ($errors->first($name) == '') return;
             else return "<small class=\"error\">{$errors->first($name)}</small>";
         }
 

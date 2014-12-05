@@ -3,5 +3,5 @@
 
 interface FoundationFormBuilderInterface
 {
-    public function alert($message, array $options=null);
+    public function alert($message, array $options = null);
 }
