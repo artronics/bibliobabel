@@ -87,5 +87,6 @@ App::down(function()
 
 require app_path().'/filters.php';
 
+Event::listen('Artronics.Models.User.Events.UserHasSubscribed', 'Artronics\Models\Listeners\EmailNotifier');
 //\Event::listen('user.creating','Artronics\Validation\UserValidator@fire');
 

@@ -1,5 +1,5 @@
 <?php
-use Artronics\Repositories\UserRepository\UserRepositoryInterface as UserRepo;
+use Artronics\Models\User\Repository\UserRepositoryInterface as UserRepo;
 use Artronics\Models\User\User;
 use Artronics\Models\Profile\Profile;
 

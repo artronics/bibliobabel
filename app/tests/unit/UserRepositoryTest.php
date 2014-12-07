@@ -34,11 +34,11 @@ class UserRepositoryTest extends TestCase
          * after executing add() method it should create a User and a Profile
          */
         $user=new Artronics\Models\User\User();
-        $userRepo=new Artronics\Repositories\UserRepository\UserRepository($user);
+        $userRepo=new Artronics\Models\User\Repository\UserRepository($user);
 
         //method under test
-        $newUser=$userRepo->add($data);
-        $newUserProfile = $newUser->profile;
+        $newUser=$userRepo->create($data);
+//        $newUserProfile = $newUser->profile;
 
         assertInstanceOf('Artronics\Models\User\User',$newUser);
         assertInstanceOf('Artronics\Models\Profile\Profile',$newUserProfile);

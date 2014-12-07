@@ -11,14 +11,6 @@ class CreateUserCommand
     public $password;
     public $password_confirmation;
 
-    /**
-     * @return mixed
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
     function __construct($email, $name, $password, $password_confirmation)
     {
         $this->email = $email;

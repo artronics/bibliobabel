@@ -126,10 +126,12 @@ return array(
         // 'fzaninotto\faker\src\autoload.php',
 
         //Here is my own Service Providers
-        'Artronics\Repositories\UserRepository\UserRepositoryServiceProvider',
-        'Artronics\Repositories\ProfileRepository\ProfileRepositoryServiceProvider',
+        'Artronics\Models\User\Repository\UserRepositoryServiceProvider',
+        'Artronics\Models\Profile\Repository\ProfileRepositoryServiceProvider',
         'Artronics\Validation\ValidationServiceProvider',
-        'Artronics\Utilities\Html\HtmlServiceProvider'
+        'Artronics\Utilities\Html\HtmlServiceProvider',
+        'Artronics\Email\MailListServiceProvider',
+        'Artronics\Email\Notifications\AllUsersServiceProvider'
     ),
 
     /*

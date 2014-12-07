@@ -1,11 +1,12 @@
 <?php namespace Artronics\Models\User\Commands;
 
 
-use Artronics\Repositories\UserRepository\UserRepositoryInterface;
+use Artronics\Models\User\Repository\UserRepositoryInterface;
 use Laracasts\Commander\CommandHandler;
-
+use Laracasts\Commander\Events\DispatchableTrait;
 class CreateUserCommandHandler implements CommandHandler
 {
+    use DispatchableTrait;
 
     private $userRepo;
 
@@ -24,7 +25,8 @@ class CreateUserCommandHandler implements CommandHandler
     public function handle($command)
     {
         $data = get_object_vars($command);
-        $user = $this->userRepo->add($data);
+        $user = $this->userRepo->create($data);
+        $this->dispatchEventsFor($user);
 
         return $user;
     }

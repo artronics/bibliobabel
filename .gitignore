@@ -1,7 +1,6 @@
 /bootstrap/compiled.php
 /vendor
 /.idea
-/public/img
 /public/bootstrap
 composer.phar
 composer.lock
@@ -11,9 +10,7 @@ composer.lock
 Thumbs.db
 bibliobabel.sublime-workspace
 bibliobabel.sublime-project
+public/assets/.sass-cache/
 
-public/compass/.sass-cache
-public/assets/compass/.sass-cache
-public/assets/compass/bower_components
 app/tests/coverage
 tests/_output/*

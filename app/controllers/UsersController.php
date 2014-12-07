@@ -1,7 +1,7 @@
 <?php
 use Artronics\Forms\RegistrationForm;
 use Artronics\Models\User\Commands\CreateUserCommand;
-use Artronics\Repositories\UserRepository\UserRepositoryInterface as UserRepo;
+use Artronics\Models\User\Repository\UserRepositoryInterface as UserRepo;
 use Artronics\Models\User\User;
 
 class UsersController extends \BaseController
@@ -48,7 +48,7 @@ class UsersController extends \BaseController
      */
     public function store()
     {
-        $data = Input::all();
+//        $data = Input::all();
 
         $user = $this->execute(CreateUserCommand::class);
 
