@@ -4,6 +4,7 @@
 use Artronics\Models\User\Repository\UserRepositoryInterface;
 use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;
+
 class CreateUserCommandHandler implements CommandHandler
 {
     use DispatchableTrait;
