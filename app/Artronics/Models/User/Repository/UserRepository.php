@@ -7,11 +7,12 @@ use Artronics\Models\User\User;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 
-class UserRepository implements UserRepositoryInterface
-{
+class UserRepository implements UserRepositoryInterface {
+
     protected $user;
 
     protected $profile;
+
     protected $defaultProfile = [
         'about' => 'salam',
     ];
@@ -41,16 +42,19 @@ class UserRepository implements UserRepositoryInterface
         $newUser->raise(new UserHasSubscribed($newUser));
         //Create Default Profile
         $newUser->profile()->create($this->defaultProfile);
+
         return $newUser;
     }
 
     public function byId($id)
     {
-        try {
+        try
+        {
             $foundUser = $this->user->whereId($id)->firstOrFail();
-//        }catch(NonExistantUserException $e){
+            //        }catch(NonExistantUserException $e){
             //TODO: Find whether there is any better way to implement this
-        } catch (ModelNotFoundException $e) {
+        } catch (ModelNotFoundException $e)
+        {
             throw new NonExistantUserException;
         }
 

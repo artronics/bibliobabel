@@ -26,22 +26,9 @@ Route::get('/user/{id}', 'ProfilesController@show');
 
 Route::post('login/user', ['as' => 'login.user', 'uses' => 'SessionsController@store']);
 Route::get('/test', function(){
-    return $_ENV['MAILCHIMP_APIKEY'];
+    return getenv('APP_ENV');
+    return $_ENV['DB_NAME'];
     return Config::get('mailchimp.mailchimp');
-    App::make('test');
-    $mail = new test();
-
 });
 
-class test{
-    protected $mail;
-
-    function __construct(Artronics\Email\MailListInterface $mail)
-    {
-        $this->mail = $mail;
-    }
-
-
-
-}
 
