@@ -5,7 +5,7 @@
 Route::pattern('id', '[1-9][0-9]{0,4}');
 
 Route::resource('sessions', 'SessionsController',['only'=>['create','store', 'destroy']]);
-
+Route::resource('profiles', 'ProfilesController');
 /*
     Here is all pages that is somehow static
     PagesController is in charge of controlling those views

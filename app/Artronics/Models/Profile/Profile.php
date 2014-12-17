@@ -5,7 +5,7 @@ class Profile extends \Eloquent
 
     public $timestamps = true;
 
-    protected $fillable = ['user_id', 'about', 'location',
+    protected $fillable = ['user_id', 'privacy', 'profile_pic', 'username', 'about', 'location',
         'facebook_username', 'twitter_username'];
 
     /**

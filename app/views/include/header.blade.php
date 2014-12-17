@@ -23,7 +23,7 @@
                             <li><a href="#"><i class="fa fa-question-circle fa-fw"></i>Help</a></li>
                             <li><a href="#"><i class="fa fa-send-o fa-fw"></i>Send Feedback</a></li>
                             <li class="divider"></li>
-                            <li><a href="logout"><i class="fa fa-sign-out fa-fw"></i>Sign Out</a></li>
+                            <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i>Sign Out</a></li>
                         </ul>
                     </li>
                     <li class="has-dropdown">

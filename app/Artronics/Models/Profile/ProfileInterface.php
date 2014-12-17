@@ -4,4 +4,5 @@
 interface ProfileInterface
 {
     public function createProfile($user);
+
 }

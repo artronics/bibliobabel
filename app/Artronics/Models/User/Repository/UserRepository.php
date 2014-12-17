@@ -15,6 +15,7 @@ class UserRepository implements UserRepositoryInterface {
 
     protected $defaultProfile = [
         'about' => 'salam',
+        'profile_pic' => 'male',
     ];
 
     function __construct(User $user)
@@ -46,6 +47,16 @@ class UserRepository implements UserRepositoryInterface {
         return $newUser;
     }
 
+    public function profile($userId)
+    {
+        return $this->user->findOrFail($userId)->profile;
+    }
+
+    /**
+     * @param $id
+     * @return mixed
+     * @throws NonExistantUserException
+     */
     public function byId($id)
     {
         try

@@ -1,7 +1,10 @@
 <?php
+use Artronics\Models\Profile\Repository\Exceptions\ProfileNotFoundException;
+use Artronics\Models\Profile\Repository\ProfileRepositoryInterface as ProfileRepo;
 use Artronics\Models\User\Repository\UserRepositoryInterface as UserRepo;
 use Artronics\Models\User\User;
 use Artronics\Models\Profile\Profile;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 /**
  * Class ProfilesController
@@ -9,16 +12,22 @@ use Artronics\Models\Profile\Profile;
 class ProfilesController extends \BaseController {
 
     /**
-     * @var UserRepo
+     * @var ProfileRepo
      */
-    protected $userRepo;
+    protected $profileRepo;
 
     /**
-     * @param UserRepo $userRepo
+     * @var
      */
-    function __construct(UserRepo $userRepo)
+    protected $profile;
+
+    /**
+     * @param UserRepo $profileRepo
+     * @internal param ProfileRepo $profileRepo
+     */
+    function __construct(ProfileRepo $profileRepo)
     {
-        $this->userRepo = $userRepo;
+        $this->profileRepo = $profileRepo;
     }
 
     /**
@@ -58,27 +67,49 @@ class ProfilesController extends \BaseController {
      * Display the specified resource.
      * GET /profiles/{id}
      *
-     * @param $id
-     * @internal param $username
+     * @param $userId
+     * @throws ProfileNotFoundException
      * @return Response
      */
-	public function show($user_id)
+	public function show($userId)
 	{
-        //$profile = $this->userRepo->getProfile($user_id);
+        //$profile = $this->profileRepo->getProfile($userId);
         //dd($profile->toArray());
-        return View::make('profiles.show');
+        //$authedUserId = Auth::user()->id;
+        try{
+            $profile = $this->profileRepo->byForeignKey('user_id',$userId)->firstOrFail();
+        }catch(ModelNotFoundException $e){
+           throw new ProfileNotFoundException('profile not found');
+        }
+        //dd($profile->user()->first()->name);//->findOrFail(2));
+        return View::make('profiles.show')->withProfile($profile);
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /profiles/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+    /**
+     * Show the form for editing the specified resource.
+     * GET /profiles/{id}/edit
+     *
+     * @param  int $id
+     * @throws ProfileNotFoundException
+     * @return Response
+     */
 	public function edit($id)
 	{
-		//
+        if (Auth::check() && Auth::user()->id == $id )
+        {
+            $authedUserId = Auth::user()->id;
+            $profile = $this->profileRepo->byId($id);
+            //dd($profile);
+            return View::make('profiles.edit')->withProfile($profile);
+        }
+        else
+            //Here we assumed that if somebody attempts to edit
+            //a profile which is not belongs to her, we'll show
+            //a profile not found page
+            //If this behavior is not relevant just change the
+            //exception to whatever more appropriate
+            throw new ProfileNotFoundException('You have no permission to edit this profile.');
+
 	}
 
 	/**
@@ -106,3 +137,4 @@ class ProfilesController extends \BaseController {
 	}
 
 }
+
