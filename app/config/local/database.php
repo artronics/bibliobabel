@@ -23,7 +23,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => getenv(DB_NAME),
+			'database'  => 'bibliobabel',
 			'username'  => 'jalal',
 			'password'  => '6220617',
 			'charset'   => 'utf8',

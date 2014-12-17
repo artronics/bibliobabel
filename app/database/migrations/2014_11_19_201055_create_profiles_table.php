@@ -16,10 +16,13 @@ class CreateProfilesTable extends Migration {
 		{
 			$table->increments('id');
             $table->integer('user_id');
+            $table->string('username');//->unique();
+            $table->string('profile_pic')->default('male');
 			$table->string('location')->nullable();
 			$table->text('about')->nullable();
 			$table->string('twitter_username')->nullable();
 			$table->string('facebook_username')->nullable();
+            $table->enum('privacy', array('public', 'private', 'protected'))->default('protected');
 			$table->timestamps();
 		});
 	}

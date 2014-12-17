@@ -15,3 +15,4 @@ public/assets/.sass-cache/
 app/tests/coverage
 tests/_output/*
 _ide_helper.php
+.phpcomplete_extended
