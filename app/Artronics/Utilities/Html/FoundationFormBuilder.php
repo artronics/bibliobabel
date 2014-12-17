@@ -42,6 +42,38 @@ class FoundationFormBuilder extends IlluminateFormBuilder implements FoundationF
     }
 
     /**
+     * @param string $name
+     * @param null $value
+     * @param array $options
+     * @param null $labelValue
+     * @return string
+     */
+    public function textarea($name, $value = null, $options = array(), $labelValue = null)
+    {
+        if ( ! isset($options['name'])) $options['name'] = $name;
+
+        // Next we will look for the rows and cols attributes, as each of these are put
+        // on the textarea element definition. If they are not present, we will just
+        // assume some sane default values for these attributes for the developer.
+        $options = $this->setTextAreaSize($options);
+
+        $options['id'] = $this->getIdAttribute($name, $options);
+
+        $value = (string) $this->getValueAttribute($name, $value);
+
+        unset($options['size']);
+
+        // Next we will convert the attributes into a string form. Also we have removed
+        // the size attribute, as it was merely a short-cut for the rows and cols on
+        // the element. Then we'll create the final textarea elements HTML for us.
+        $options = $this->attributes($options);
+
+        $html = '<textarea'.$options.'>'.e($value).'</textarea>';
+
+        return $this->labelWrapper($html, $labelValue);
+    }
+
+    /**
      * Creates Foundation alert
      *
      * @param $message
